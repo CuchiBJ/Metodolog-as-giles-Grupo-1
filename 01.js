@@ -25,7 +25,7 @@ Vue.component("navigation", {
             ]
           },
           { url: "#", name: "Retos" },
-          { url: "#", name: "Reproductor de musica" }
+          { url: "participantes.html", name: "Participantes" }
         ]
       };
     },

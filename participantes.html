@@ -4,11 +4,21 @@
         <link rel=stylesheet href="estilo.css" type="text/css">
     </head> 
         <body>
-            <div id="navbar">
+            <div id="app">
                 <navigation></navigation>
+
+            <input type="text">
+               
+            <ul>
+                <li v-for="nombre of nombres">{{nombre.nombre}} - {{nombre.apellido}}</li>
+            </ul>  
+
+
+
             </div>
+            
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="01.js"></script>
+        <script src="nom.js"></script>
         </body>
    
 </html>
