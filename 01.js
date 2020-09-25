@@ -5,7 +5,7 @@ Vue.component("navigation", {
         isOpen: false,
         active: false,
         navList: [
-          { url: "#", name: "Sobre nosotros" },
+          { url: "Inicio.html", name: "Inicio" },
           { url: "#", name: "Tragos" },
           { url: "#", name: "Cartas" },
           {

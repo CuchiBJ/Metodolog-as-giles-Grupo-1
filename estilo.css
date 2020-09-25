@@ -91,6 +91,11 @@ body::before {
   animation: emoji 20s linear 3s infinite;
 }
 
+#app {
+  position: center;
+  padding-top: 100px;
+}
+
 @keyframes emoji {
   1% {
     content: '😍';
