@@ -88,42 +88,40 @@ body::before {
   color: #ffffff;
   opacity: .1;
   font-size: 30vw;
-  animation: emoji 20s linear 3s infinite;
+  animation-name:emoji;
+  animation-duration:2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes emoji {
-  1% {
+  10% {
     content: '😍';
   }
-  2% {
+  20% {
     content: '😙';
   }
-  3% {
+  30% {
     content: '😌';
   }
-  4% {
+  40% {
     content: '😋';
   }
-  5% {
+  50% {
     content: '😉';
   }
-  6% {
+  60% {
     content: '😁';
   }
-  7% {
+  70% {
     content: '😜';
   }
-  8% {
+  80% {
     content: '😍';
   }
-  9% {
+  90% {
     content: '😝';
   }
-  10% {
-    content: '😊';
-  }
-  11%,
   100% {
-    content: '';
+    content: '😊';
   }
 }

@@ -45,7 +45,7 @@ Vue.component("navigation", {
                           <li 
                             v-for="{ url, name, index, target } in item.children" 
                             :key="index">
-                              <a :href="url" :title="name" :target="target">{{ name }}
+                              <a :href="url" :title="name" :target="target">{{ name }}</a>
                           </li>
                       </ul>
                   </div>
