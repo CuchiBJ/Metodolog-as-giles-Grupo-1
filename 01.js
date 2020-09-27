@@ -13,9 +13,9 @@ Vue.component("navigation", {
             name: "Juegos",
             children: [
               {
-                url: "https://twitter.com/andrejsharapov",
+                url: "probabilidad.html",
                 name: "¿Que probabilidad hay?",
-                target: "_blank"
+                
               },
               {
                 url: "https://dribbble.com/andrejsharapov",
