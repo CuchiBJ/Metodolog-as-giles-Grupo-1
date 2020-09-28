@@ -2,15 +2,51 @@
     <head>
         <title>Prueba VUE</title>
         <link rel=stylesheet href="estilo.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head> 
-        <body>
+        <body style=" color: currentcolor;
+        background: radial-gradient(#dc3545 6%, transparent 6%), #961313;
+        background-position: 0 0, 5px 5px;
+        background-size: 5px 5px;">
+
             <div id="navbar">
                 <navigation></navigation>
             </div>
+            <div id="app2">
+                
+                         <div id="cont" class="container mt-3 ">
+                           <button class="btn btn-primary" @click="elegir">ELIJE PARTICIPANTES</button>
+                      
+                              <div class="container mt-3 " id="resultado"> </div>  
+                             
+                            
+                            <!-- <div class="container mt-3"id="resultado2"></div> -->
 
-            <h1>hola mundo</h1>
+                              </div>
+                
+                        <div id="cont2" class="container mt-5 " >
+
+                          
+                   
+                    
+                             <h6>El primer jugador debe elegir un numero del 1 al 3 inclusive:</h6>
+                             <input type="password"  class="form-control my-2" v-model="num1">
+                              <h6>El segundo jugador debe elegir un numero del 1 al 3 inclusive</h6>
+                             <input type="password"  class="form-control my-2" v-model="num2">
+
+                             <button class="btn btn-primary" @click="jugar(num1,num2)">JUGAR</button>
+                 
+                             </div>
+                
+             </div>
+
+           
+
+            
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="01.js"></script>
+        <script src="prob.js"></script>
         </body>
    
 </html>
