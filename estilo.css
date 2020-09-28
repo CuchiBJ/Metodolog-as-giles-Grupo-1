@@ -40,6 +40,17 @@ ul#navigation {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+}
+
+#app{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  top: 20%;
+
 }
 
 .dropdown {
@@ -92,6 +103,8 @@ body::before {
   animation-duration:2s;
   animation-iteration-count: infinite;
 }
+
+
 
 @keyframes emoji {
   10% {

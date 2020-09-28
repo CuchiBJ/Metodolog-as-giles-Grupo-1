@@ -5,7 +5,7 @@ Vue.component("navigation", {
         isOpen: false,
         active: false,
         navList: [
-          { url: "#", name: "Sobre nosotros" },
+          { url: "Inicio.html", name: "Inicio" },
           { url: "#", name: "Tragos" },
           { url: "#", name: "Cartas" },
           {
@@ -13,9 +13,9 @@ Vue.component("navigation", {
             name: "Juegos",
             children: [
               {
-                url: "https://twitter.com/andrejsharapov",
+                url: "probabilidad.html",
                 name: "¿Que probabilidad hay?",
-                target: "_blank"
+                
               },
               {
                 url: "https://dribbble.com/andrejsharapov",
@@ -25,7 +25,7 @@ Vue.component("navigation", {
             ]
           },
           { url: "#", name: "Retos" },
-          { url: "#", name: "Reproductor de musica" }
+          { url: "participantes.html", name: "Participantes" }
         ]
       };
     },
