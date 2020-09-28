@@ -6,15 +6,22 @@ data: {
         {nombre:[]}
     ],
     nuevoparticipante: ""
+    
+
 },
+
 methods: {
+    
     agregarparticipante() {
+      
         this.nombres.push({
             nombre: this.nuevoparticipante
-
+           
+          
         });
         this.nuevoparticipante= '';
         localStorage.setItem('nom-vue', JSON.stringify(this.nombres));
+        console.log(this.nombres)
     },
     borrar(index) {
       this.nombres.splice(index,1);
