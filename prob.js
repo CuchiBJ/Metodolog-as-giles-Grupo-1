@@ -4,7 +4,7 @@ const app2 = new Vue({
         num1: '',
         num2: '',
         clave: [],
-        va:[],
+        va:'',
         myNumeroAleatorio: '',
         x:'',
       num:'',
@@ -14,21 +14,35 @@ const app2 = new Vue({
     },
 
     methods: {
+        numelegido1(value) {
+            this.num1 = value;
+            console.log(this.num1);
+        },
+        numelegido2(value) {
+            this.num2 = value;
+            console.log(this.num2);
+        },
+
         jugar(num1,num2) {
-            if (num1 <4 && num2 <4) {
-                alert("numeros validos");
+            if (num1 == num2) {
+                //alert("Deben realizar el reto!!!");
+                swal("Deben realizar el reto!!!", "...and here's the text!");
 
             } else{
               
-                alert("Ambos numeros deben estar entre el 1 y el 3")
+                //alert("Zafaron... Por ahora!");
+                swal("Zafaron!!...", "...Por ahora!");
             }
+            this.num1 = '';
+            this.num2 = '';
+            this.elegir()
         },
         elegir() {  
 
             var clave = JSON.parse(localStorage.getItem('nom-vue'));
 
             var x= clave.length
-            console.log(x);;
+            //console.log(x);;
 
             if( x !== 0)
             {
@@ -43,11 +57,11 @@ const app2 = new Vue({
                 var numer = Math.floor((Math.random() * (x-0))+0);
 
                }
-                var va = clave[num].nombre
-                var vari = clave[numer].nombre
+               this.va = clave[num].nombre
+               this.vari = clave[numer].nombre
 
                 var tag= document.getElementById("resultado");
-                tag.innerHTML=""+va+ " y " +vari+ " tienen que:";
+                tag.innerHTML=""+this.va+ " y " +this.vari+ " tienen que:";
                // document.getElementById('resultado').innerHTML = va;
                 //document.getElementById('resultado2').innerHTML = vari;
 
@@ -56,24 +70,18 @@ const app2 = new Vue({
             {
                 alert('Debe ingresar participantes primero')
             }
-
-          
-        
-        
-
-           // var x = Object.keys(objetoJson).length;
-            //var myNumeroAleatorio = Math.floor(Math.random()*(x+1))
-
-            
-          
-          
-         
-         
-
-            
-          
-         
+          // var x = Object.keys(objetoJson).length;
+            //var myNumeroAleatorio = Math.floor(Math.random()*(x+1))         
         
         }
+    },
+    computed: {
+        deshabilitado1(){
+            return this.num1 === 1 || this.num1 === 2 || this.num1 === 3;
+        },
+
+        deshabilitado2(){
+            return this.num2 === 1 || this.num2 === 2 || this.num2 === 3;
+        },
     }
 })

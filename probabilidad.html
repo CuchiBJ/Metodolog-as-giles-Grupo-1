@@ -5,7 +5,7 @@
         <title>Prueba VUE</title>
         <link rel=stylesheet href="estilo.css" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head> 
         <body style=" color: currentcolor;
         background: radial-gradient(#dc3545 6%, transparent 6%), #961313;
@@ -32,12 +32,20 @@
                           
                    
                     
-                             <h6>El primer jugador debe elegir un numero del 1 al 3 inclusive:</h6>
-                             <input type="password"  class="form-control my-2" v-model="num1">
-                              <h6>El segundo jugador debe elegir un numero del 1 al 3 inclusive</h6>
-                             <input type="password"  class="form-control my-2" v-model="num2">
+                             <h6>{{va}} debe elegir un numero del 1 al 3:</h6>
+                             <div id="elegirnum" class="container text-center ">
+                             <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
+                             <button type="button" class="btn btn-outline-success" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
+                             <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
+                             </div>
+                              <h6>{{vari}} debe elegir un numero del 1 al 3</h6>
+                              <div id="elegirnum" class="container text-center ">
+                                <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
+                                <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
+                                <button type="button" class="btn btn-outline-success" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
+                                </div>
 
-                             <button class="btn btn-primary" @click="jugar(num1,num2)">JUGAR</button>
+                             <button class="btn btn-primary" @click="jugar(num1,num2)" style="margin-top: 20px;">JUGAR</button>
                  
                              </div>
                 
