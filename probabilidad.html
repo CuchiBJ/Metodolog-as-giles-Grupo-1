@@ -3,19 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>Prueba VUE</title>
-        <link rel=stylesheet href="estilo.css" type="text/css">
+        <link rel=stylesheet href="estilos2.css" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     </head> 
         <body style=" color: currentcolor;
-        background: radial-gradient(#dc3545 6%, transparent 6%), #961313;
-        background-position: 0 0, 5px 5px;
-        background-size: 5px 5px;">
+        width: 100%;
+        height:600px;
+        background: #c0b2bc;
+          /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right hsla(336, 6%, 33%, 0.671), hsl(317, 45%, 52%, 0.664)), url(dados.jpeg) 100%; 
+          background: linear-gradient(to right, hsla(341, 10%, 49%, 0.493), rgba(124, 8, 91, 0.664)), url(dados.jpeg) 100%; 
+          background-size: cover;
+          background-attachment: fixed;
+          position: relative;  
+         ">
 
             <div id="navbar">
                 <navigation></navigation>
             </div>
             <div id="app2">
+
+              <div class="container mt-3"> 
+                <h1 class="lines-effect">¿Qué probabilidad hay..? </h1> 
+                
+             <div class="form-group">
+               
                 
                          <div id="cont" class="container mt-3 ">
                            <button class="btn btn-primary" @click="elegir">ELIJE PARTICIPANTES</button>
@@ -34,15 +48,15 @@
                     
                              <h6>{{va}} debe elegir un numero del 1 al 3:</h6>
                              <div id="elegirnum" class="container text-center ">
-                             <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
-                             <button type="button" class="btn btn-outline-success" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
-                             <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
+                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
+                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
+                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
                              </div>
                               <h6>{{vari}} debe elegir un numero del 1 al 3</h6>
                               <div id="elegirnum" class="container text-center ">
-                                <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
-                                <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
-                                <button type="button" class="btn btn-outline-success" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
+                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
+                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
+                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
                                 </div>
 
                              <button class="btn btn-primary" @click="jugar(num1,num2)" style="margin-top: 20px;">JUGAR</button>
