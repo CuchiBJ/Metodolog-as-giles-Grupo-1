@@ -15,12 +15,14 @@ methods: {
         });
         this.nuevoparticipante= '';
         localStorage.setItem('nom-vue', JSON.stringify(this.nombres));
+        console.log(this.nombres)
     },
     borrar(index) {
       this.nombres.splice(index,1);
       localStorage.setItem('nom-vue', JSON.stringify(this.nombres));
       }
 },
+
 created: function() {
     let datosDB = JSON.parse(localStorage.getItem('nom-vue'))
     if (datosDB === null) {
