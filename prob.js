@@ -25,11 +25,13 @@ const app2 = new Vue({
 
         jugar(num1,num2) {
             if (num1 == num2) {
-                alert("Deben realizar el reto!!!");
+                //alert("Deben realizar el reto!!!");
+                swal("Deben realizar el reto!!!", "...and here's the text!");
 
             } else{
               
-                alert("Zafaron... Por ahora!")
+                //alert("Zafaron... Por ahora!");
+                swal("Zafaron!!...", "...Por ahora!");
             }
             this.num1 = '';
             this.num2 = '';
@@ -40,7 +42,7 @@ const app2 = new Vue({
             var clave = JSON.parse(localStorage.getItem('nom-vue'));
 
             var x= clave.length
-            console.log(x);;
+            //console.log(x);;
 
             if( x !== 0)
             {
