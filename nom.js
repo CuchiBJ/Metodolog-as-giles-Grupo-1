@@ -28,6 +28,7 @@ methods: {
       localStorage.setItem('nom-vue', JSON.stringify(this.nombres));
       }
 },
+
 created: function() {
     let datosDB = JSON.parse(localStorage.getItem('nom-vue'))
     if (datosDB === null) {
