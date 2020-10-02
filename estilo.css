@@ -127,6 +127,9 @@ body::before {
   animation-iteration-count: infinite;
 }
 
+#elegirnum button {
+  border-radius: 50%;
+}
 
 
 @keyframes emoji {

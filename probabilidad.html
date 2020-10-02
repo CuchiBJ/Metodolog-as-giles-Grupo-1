@@ -30,12 +30,20 @@
                           
                    
                     
-                             <h6>El primer jugador debe elegir un numero del 1 al 3 inclusive:</h6>
-                             <input type="password"  class="form-control my-2" v-model="num1">
-                              <h6>El segundo jugador debe elegir un numero del 1 al 3 inclusive</h6>
-                             <input type="password"  class="form-control my-2" v-model="num2">
+                             <h6>{{va}} debe elegir un numero del 1 al 3:</h6>
+                             <div id="elegirnum" class="container text-center ">
+                             <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
+                             <button type="button" class="btn btn-outline-success" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
+                             <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
+                             </div>
+                              <h6>{{vari}} debe elegir un numero del 1 al 3</h6>
+                              <div id="elegirnum" class="container text-center ">
+                                <button type="button" class="btn btn-outline-warning" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
+                                <button type="button" class="btn btn-outline-primary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
+                                <button type="button" class="btn btn-outline-success" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
+                                </div>
 
-                             <button class="btn btn-primary" @click="jugar(num1,num2)">JUGAR</button>
+                             <button class="btn btn-primary" @click="jugar(num1,num2)" style="margin-top: 20px;">JUGAR</button>
                  
                              </div>
                 
