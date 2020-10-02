@@ -6,7 +6,7 @@ Vue.component("navigation", {
         active: false,
         navList: [
           { url: "Inicio.html", name: "Inicio" },
-          { url: "#", name: "Tragos" },
+          { url: "tragos.html", name: "Tragos" },
           { url: "#", name: "Cartas" },
           {
             url: "#",
@@ -14,7 +14,7 @@ Vue.component("navigation", {
             children: [
               {
                 url: "probabilidad.html",
-                name: "¿Que probabilidad hay?",
+                name: "¿Qué probabilidad hay?",
                 
               },
               {
