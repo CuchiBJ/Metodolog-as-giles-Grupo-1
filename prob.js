@@ -10,7 +10,8 @@ const app2 = new Vue({
       num:'',
       numer:'',
       vari:'',
-      tag:''
+      tag:'',
+      reto:''
     },
 
     methods: {
@@ -28,6 +29,7 @@ const app2 = new Vue({
             this.num1 = '';
             this.num2 = '';
             this.elegir();
+            this.elegirreto();
             document.getElementById("cont2").style.display="block";
         },
         elegir() {  
@@ -67,6 +69,16 @@ const app2 = new Vue({
             //var myNumeroAleatorio = Math.floor(Math.random()*(x+1))         
         
         },
+        elegirreto(){
+           $.getJSON("/retos.json", function(retos){
+          $.each(retos[datos],function(idx,dato){
+              alert("retos:" +dato)
+                   
+               })
+           })
+            
+        },
+
         comparar() {
             if (this.num1 == this.num2) {
             
