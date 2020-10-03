@@ -25,41 +25,42 @@
             </div>
             <div id="app2">
 
-              <div class="container mt-3"> 
+              <div class="container mt-3 text-center"> 
                 <h1 class="lines-effect">¿Qué probabilidad hay..? </h1> 
                 
              <div class="form-group container text-center">
                
                 
                          <div id="cont" class="container mt-3 ">
-                           <button class="btn btn-primary" @click="elegir">ELIJE PARTICIPANTES</button>
+                          <button class="btn btn-success btn-lg" @click="jugar()" style="margin-top: 20px; margin-right: 50px;">JUGAR</button>
+                           <!--<button class="btn btn-primary" @click="elegir" style="display: none;">ELIJE PARTICIPANTES</button>
                       
-                              <div class="container mt-3 " id="resultado"> </div>  
+                              <div class="container mt-3 " id="resultado" style="display: none;"> </div>  
                              
                             
-                            <!-- <div class="container mt-3"id="resultado2"></div> -->
+                             <div class="container mt-3"id="resultado2"></div> -->
 
                               </div>
                 
-                        <div id="cont2" class="container mt-5 " >
+                        <div id="cont2" class="container mt-5 " style="display: none;">
 
                           
                    
                     
-                             <h6>{{va}} debe elegir un numero del 1 al 3:</h6>
+                             <h3>{{va}} debe elegir un numero del 1 al 3:</h3>
                              <div id="elegirnum" class="container text-center ">
                              <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
                              <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
                              <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
                              </div>
-                              <h6>{{vari}} debe elegir un numero del 1 al 3</h6>
+                              <h3>{{vari}} debe elegir un numero del 1 al 3</h3>
                               <div id="elegirnum" class="container text-center ">
                                 <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
                                 <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
                                 <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
                                 </div>
 
-                             <button class="btn btn-primary" @click="jugar(num1,num2)" style="margin-top: 20px;">JUGAR</button>
+                                <button class="btn btn-success btn-lg" @click="comparar()" style="margin-top: 20px;">RESULTADO</button>
                  
                              </div>
                 

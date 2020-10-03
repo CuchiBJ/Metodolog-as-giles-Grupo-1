@@ -159,4 +159,12 @@ h1:hover::before, h1:hover::after{
   font-size: 30px;
   width: 70px;
   height: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: white;
 }
