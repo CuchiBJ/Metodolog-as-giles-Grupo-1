@@ -70,6 +70,15 @@ ul#navigation {
 
 }
 
+#centr{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  top: 20%;
+}
+
 #cont {
   position: absolute;
   height:100%; 
@@ -123,7 +132,7 @@ h1 {
   display: flex;
   align-items: center;
   position:relative;
-  color: rgb(192, 187, 187);
+  color: rgb(255, 255, 255);
   font-family: 'Dancing Script';
   justify-content: center;
   justify-items: center;
