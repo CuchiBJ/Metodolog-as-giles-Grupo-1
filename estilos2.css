@@ -123,7 +123,7 @@ h1 {
   display: flex;
   align-items: center;
   position:relative;
-  color: rgb(192, 187, 187);
+  color: rgb(255, 255, 255);
   font-family: 'Dancing Script';
   justify-content: center;
   justify-items: center;
@@ -150,4 +150,12 @@ h1:hover::before, h1:hover::after{
   font-size: 30px;
   width: 70px;
   height: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: white;
 }

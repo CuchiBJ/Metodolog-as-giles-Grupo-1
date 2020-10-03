@@ -23,19 +23,12 @@ const app2 = new Vue({
             console.log(this.num2);
         },
 
-        jugar(num1,num2) {
-            if (num1 == num2) {
-                //alert("Deben realizar el reto!!!");
-                swal("Deben realizar el reto!!!", "...and here's the text!");
-
-            } else{
-              
-                //alert("Zafaron... Por ahora!");
-                swal("Zafaron!!...", "...Por ahora!");
-            }
+        jugar() {
+            
             this.num1 = '';
             this.num2 = '';
-            this.elegir()
+            this.elegir();
+            document.getElementById("cont2").style.display="block";
         },
         elegir() {  
 
@@ -60,8 +53,8 @@ const app2 = new Vue({
                this.va = clave[num].nombre
                this.vari = clave[numer].nombre
 
-                var tag= document.getElementById("resultado");
-                tag.innerHTML=""+this.va+ " y " +this.vari+ " tienen que:";
+                //var tag= document.getElementById("resultado");
+                //tag.innerHTML=""+this.va+ " y " +this.vari+ " tienen que:";
                // document.getElementById('resultado').innerHTML = va;
                 //document.getElementById('resultado2').innerHTML = vari;
 
@@ -73,7 +66,18 @@ const app2 = new Vue({
           // var x = Object.keys(objetoJson).length;
             //var myNumeroAleatorio = Math.floor(Math.random()*(x+1))         
         
+        },
+        comparar() {
+            if (this.num1 == this.num2) {
+            
+                swal("Deben realizar el reto!!!", "...and here's the text!");
+
+            } else{
+              
+                swal("Zafaron!!...", "...Por ahora!");
+            }
         }
+
     },
     computed: {
         deshabilitado1(){
