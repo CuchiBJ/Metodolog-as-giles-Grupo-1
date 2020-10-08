@@ -6,16 +6,26 @@ data: {
         {nombre:[]}
     ],
     nuevoparticipante: ""
+    
+
 },
+
 methods: {
+    
     agregarparticipante() {
+      
+        if (this.nuevoparticipante!=""){
         this.nombres.push({
             nombre: this.nuevoparticipante
 
+          
         });
         this.nuevoparticipante= '';
         localStorage.setItem('nom-vue', JSON.stringify(this.nombres));
         console.log(this.nombres)
+        } else {
+            swal("Debe escribir un nombre!!");
+        }
     },
     borrar(index) {
       this.nombres.splice(index,1);

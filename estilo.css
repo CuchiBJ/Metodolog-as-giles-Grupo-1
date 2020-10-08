@@ -55,6 +55,29 @@ ul#navigation {
 
 }
 
+
+
+#app2{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  top: 20%;
+
+}
+
+#cont {
+  position: absolute;
+  height:100%; 
+}
+
+#cont2{
+  position: relative;
+  top:130px;
+  height:100%; 
+}
+
 .dropdown {
   position: absolute;
   left: 50%;
@@ -282,6 +305,7 @@ footer {
   footer{
     font-size: 15px;
 }
+
   .contenido-texto h3{
       font-size: 20px;
   }
@@ -311,4 +335,4 @@ footer {
    .titulo-final h2{
     font-size: 90px;
 
-  }
+  }}
