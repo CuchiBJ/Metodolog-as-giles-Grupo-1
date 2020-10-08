@@ -18,9 +18,9 @@ Vue.component("navigation", {
                 
               },
               {
-                url: "https://dribbble.com/andrejsharapov",
+                url: "",
                 name: "Juego 2",
-                target: "_blank"
+              
               },
             ]
           },
