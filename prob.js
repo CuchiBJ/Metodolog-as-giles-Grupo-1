@@ -28,7 +28,8 @@ const app2 = new Vue({
         'Tomar con su mano no habil el resto del juego',
         'Entregan sus celulares al resto de la previa, se revisa todo',
         'Subir una historia a instagram haciendo algo que el resto de la previa elija (Por ejemplo: cantando)',
-        'Confesarle el amor a uno de sus contactos (A eleccion de los participantes de la previa)'
+        'Confesarle el amor a uno de sus contactos (A eleccion de los participantes de la previa)',
+        'Besen cada uno una oreja, del jugador que escojan'
     
       ],
       largo:'',
