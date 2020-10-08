@@ -8,7 +8,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head> 
-        <body style=" color: currentcolor;
+        <body  class="overflow-auto" style=" color: currentcolor;
         width: 100%;
         height:600px;
         background: #c0b2bc;
@@ -40,12 +40,13 @@
                             
                              <div class="container mt-3"id="resultado2"></div> -->
 
-                              </div>
+                         </div>
                 
                         <div id="cont2" class="container mt-5 " style="display: none;">
 
                           
-                   
+                          
+                              <p>Los participantes deben : {{reto}}</p>
                     
                              <h3>{{va}} debe elegir un numero del 1 al 3:</h3>
                              <div id="elegirnum" class="container text-center ">
@@ -61,6 +62,10 @@
                                 </div>
 
                                 <button class="btn btn-success btn-lg" @click="comparar()" style="margin-top: 20px;">RESULTADO</button>
+
+
+
+                                <div> </div>
                  
                              </div>
                 
