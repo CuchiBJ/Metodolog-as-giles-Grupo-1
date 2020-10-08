@@ -17,7 +17,7 @@ methods: {
         if (this.nuevoparticipante!=""){
         this.nombres.push({
             nombre: this.nuevoparticipante
-
+           
           
         });
         this.nuevoparticipante= '';
