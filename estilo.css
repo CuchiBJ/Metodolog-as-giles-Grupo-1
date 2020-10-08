@@ -55,6 +55,29 @@ ul#navigation {
 
 }
 
+
+
+#app2{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  top: 20%;
+
+}
+
+#cont {
+  position: absolute;
+  height:100%; 
+}
+
+#cont2{
+  position: relative;
+  top:130px;
+  height:100%; 
+}
+
 .dropdown {
   position: absolute;
   left: 50%;
@@ -193,6 +216,7 @@ footer {
 }
 
 .imagen-sintomas {
+<<<<<<< HEAD
   
   overflow: hidden;
   position: relative;
@@ -224,6 +248,39 @@ footer {
  .hover-galeria img{
      width:50px;
   
+=======
+  
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0,0,0, .5);
+ }
+ 
+ .imagen-sintomas > img{
+     width:100%;
+     height:100%;
+     object-fit: conver;
+     display: block;
+ }
+ 
+ .hover-galeria{
+     position:absolute;
+     width:100%;
+     height:100%;
+     top:0;
+     transform: scale(0);
+     background: hsla(280, 2%, 25%, 0.7);
+     transition: transform .5s;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ 
+ .hover-galeria img{
+     width:50px;
+  
+>>>>>>> c17c2fa2bf6c5775ba362c4d730c7beb90acb10b
  }
  
  .hover-galeria p{
@@ -254,6 +311,7 @@ footer {
   -o-background-size: cover;
   background-size: cover;
 
+<<<<<<< HEAD
 }
 
 
@@ -282,6 +340,37 @@ footer {
   footer{
     font-size: 15px;
 }
+=======
+}
+
+
+
+
+@media screen and (max-width:400px){
+
+  body{
+    padding-top: 80px;
+}
+
+  .titulo-final {
+      font-size: 20px;
+
+  }
+
+  .content-foo h4 {
+      font-size: 15px;
+  }
+
+  .content-foo p {
+      font-size: 15px;
+  }
+
+
+  footer{
+    font-size: 15px;
+}
+
+>>>>>>> c17c2fa2bf6c5775ba362c4d730c7beb90acb10b
   .contenido-texto h3{
       font-size: 20px;
   }
@@ -311,4 +400,8 @@ footer {
    .titulo-final h2{
     font-size: 90px;
 
+<<<<<<< HEAD
   }
+=======
+  }}
+>>>>>>> c17c2fa2bf6c5775ba362c4d730c7beb90acb10b
