@@ -168,3 +168,35 @@ h1:hover::before, h1:hover::after{
 h3 {
   color: white;
 }
+
+#neon{
+  color: #fff;
+  background-color: black;
+  opacity: 80%;
+  width: 600px;
+  height: 150px;
+  border: 3px solid violet;
+ 
+  top: 28px;
+  border-radius: 10px;
+  left: 50%;
+  margin-bottom: 15px;
+
+
+
+   text-shadow:
+        0 0 5px rgba(215, 51, 248),
+        0 0 10px rgba(215, 51, 248),
+        0 0 20px rgba(215, 51, 248),
+        0 0 40px rgb(126, 28, 101),
+        0 0 80px rgba(126, 28, 101),
+        0 0 90px rgba(126, 28, 101),
+        0 0 100px rgb(60, 2, 71),
+        0 0 140px rgba(60, 2, 71),
+        0 0 180px rgba(60, 2, 71);
+}
+
+#reto{
+  justify-content: center;
+  margin-top: 50px;
+}
