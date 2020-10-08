@@ -10,9 +10,32 @@ const app2 = new Vue({
       num:'',
       numer:'',
       vari:'',
-      tag:'',
+      retos: [
+        'Comerse un ajo',
+        'Decirle un piropo atrevido a alguien desconocido en instagram',
+        'Suplicar a su ex que vuelvan',
+        'Intercambiar toda la vestimenta con un jugador del otro género',
+        'Cantar una balada romántica a capela',
+        'Darle un beso al jugador de su izquierda',
+        'Publicar en el muro de Facebook de un contacto casado algún mensaje picante',
+        'Hacer una confesión falsa a su mamá',
+        'Uno de los participantes tiene que pegarle una cachetada al otro, sino toman',
+        'Hacer fondo',
+        'No pueden ir al baño hasta que vuelvan a salir sus nombres',
+        'Parados el resto de la previa',
+        'Debajo de la mesa hasta que vuelvan a salir sus nombres',
+        'Hacer un karaoke en dueto',
+        'Tomar con su mano no habil el resto del juego',
+        'Entregan sus celulares al resto de la previa, se revisa todo',
+        'Subir una historia a instagram haciendo algo que el resto de la previa elija (Por ejemplo: cantando)',
+        'Confesarle el amor a uno de sus contactos (A eleccion de los participantes de la previa)'
+    
+      ],
+      largo:'',
       reto:''
-    },
+   
+      
+        },
 
     methods: {
         numelegido1(value) {
@@ -30,6 +53,7 @@ const app2 = new Vue({
             this.num2 = '';
             this.elegir();
             this.elegirreto();
+        
             document.getElementById("cont2").style.display="block";
         },
         elegir() {  
@@ -55,10 +79,7 @@ const app2 = new Vue({
                this.va = clave[num].nombre
                this.vari = clave[numer].nombre
 
-                //var tag= document.getElementById("resultado");
-                //tag.innerHTML=""+this.va+ " y " +this.vari+ " tienen que:";
-               // document.getElementById('resultado').innerHTML = va;
-                //document.getElementById('resultado2').innerHTML = vari;
+   
 
             } 
             else
@@ -70,12 +91,11 @@ const app2 = new Vue({
         
         },
         elegirreto(){
-           $.getJSON("/retos.json", function(retos){
-          $.each(retos[datos],function(idx,dato){
-              alert("retos:" +dato)
-                   
-               })
-           })
+            var largo = this.retos.length
+            var num = Math.floor((Math.random() * (largo-0))+0);
+
+            this.reto= this.retos[num]
+         
             
         },
 
