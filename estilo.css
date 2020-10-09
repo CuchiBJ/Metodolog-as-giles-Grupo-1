@@ -110,13 +110,31 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  color: currentcolor;
  background-size: cover;
  background-attachment: fixed;
  position: relative;
 }
 
+.primero {
+
+  padding: 100px 0 0px 0;
+  margin-bottom: 0%;
+  overflow:visible;
+  position: absolute;
+  margin-bottom: 0;
+  bottom: 0%;
+  width: 100%;
+  height: 2%;
+}
+
+
+
+
+
 /*FOOTER*/ 
+
+
+
 
 footer {
 
@@ -124,10 +142,12 @@ footer {
   margin-bottom: 0%;
   overflow:visible;
   position: absolute;
-  bottom: 0%;
+  margin-bottom: -1300px;
   width: 100%;
   height: 2%;
 }
+
+
 
 .contenedor-footer{
   background-color: #1d1c1c;
@@ -179,10 +199,140 @@ footer {
 
 .maniji{
 
-  color: rgb(238, 229, 229);
+  color: rgb(241, 211, 211);
   font-family: fantasy;
-  font-size: x-large;
+  font-size: large;
   text-align: justify;
+
   
 }
 
+
+.man{
+
+  font-family: fantasy;
+  font-size: x-large;
+  text-align: justify;
+}
+
+.imagen-sintomas {
+  
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0,0,0, .5);
+ }
+ 
+ .imagen-sintomas > img{
+     width:100%;
+     height:100%;
+     object-fit: conver;
+     display: block;
+ }
+ 
+ .hover-galeria{
+     position:absolute;
+     width:100%;
+     height:100%;
+     top:0;
+     transform: scale(0);
+     background: hsla(280, 2%, 25%, 0.7);
+     transition: transform .5s;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ 
+ .hover-galeria img{
+     width:50px;
+  
+ }
+ 
+ .hover-galeria p{
+     color:#fff;
+ }
+ 
+ .imagen-sintomas:hover .hover-galeria{
+     transform:scale(1);
+ }
+
+ .carousel-item {
+  height: 70vh;
+  width: 100vh;
+  min-height: 250px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-item .active {
+  height: 70vh;
+  min-height: 250px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+
+
+
+@media screen and (max-width:400px){
+
+  body{
+    padding-top: 80px;
+}
+
+  .titulo-final {
+      font-size: 20px;
+
+  }
+
+  .content-foo h4 {
+      font-size: 15px;
+  }
+
+  .content-foo p {
+      font-size: 15px;
+  }
+
+
+  footer{
+    font-size: 15px;
+}
+  .contenido-texto h3{
+      font-size: 20px;
+  }
+  
+  .titulo{
+      font-size:20px;
+  }
+
+  .contenedor-footer{
+      font-size: 15px;
+  }
+
+  .content-foo{
+      font-size: 20px;
+
+  }
+
+  .contenidoo-texto h3 {
+      font-size: 20px;
+   }
+
+   .contenido-texto p{
+    font-size:15px;
+
+   }
+
+   .titulo-final h2{
+    font-size: 90px;
+
+  }
+}
