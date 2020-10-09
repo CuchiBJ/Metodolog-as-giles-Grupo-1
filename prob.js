@@ -103,7 +103,7 @@ const app2 = new Vue({
         comparar() {
             if (this.num1 == this.num2) {
             
-                swal("Deben realizar el reto!!!", "...and here's the text!");
+                swal("Deben realizar el reto!!!", this.reto);
 
             } else{
               
