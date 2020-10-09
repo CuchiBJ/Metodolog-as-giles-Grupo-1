@@ -121,8 +121,8 @@ ul#navigation {
 
 body {
   position: relative;
-  overflow: hidden;
-  padding-top: 4em;
+  overflow: auto;
+  padding-top: 1.5em;
   padding-bottom: 4em;
   min-height: 100vh;
   font-family: "Raleway", sans-serif;
@@ -133,9 +133,9 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  color: currentcolor;
-  background-position: 0 0, 5px 5px;
-  background-size: 5px 5px;
+ background-size: cover;
+ background-attachment: fixed;
+ position: relative;
 }
 
 
