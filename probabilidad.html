@@ -8,77 +8,71 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head> 
-        <body  class="overflow-auto" style=" color: currentcolor;
+        <body id="bod" class="overflow-auto" style=" color: currentcolor;
         width: 100%;
-        height:600px;
-        background: #c0b2bc;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to right hsla(336, 6%, 33%, 0.671), hsl(317, 45%, 52%, 0.664)), url(dados.jpeg) 100%; 
-          background: linear-gradient(to right, hsla(341, 10%, 49%, 0.493), rgba(124, 8, 91, 0.664)), url(dados.jpeg) 100%; 
-          background-size: cover;
-          background-attachment: fixed;
-          position: relative;  
+        height:100%;
+        background: url(proba.jpg); 
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 100px 150px rgba(0, 0, 0, .6); 
          ">
 
-            <div id="navbar">
+              <div id="navbar">
                 <navigation></navigation>
-            </div>
-            <div id="app2">
+             </div>
+      
+      <div id="app2">
 
-              <div class="container mt-3 text-center"> 
-                <h1 class="lines-effect">¿Qué probabilidad hay? </h1> 
-                
-             <div class="form-group container text-center">
+       <div class="container mt-3 text-center"> 
+
+                    <h1 class="lines-effect">¿Qué probabilidad hay? </h1> 
+                       
+            <div  class="form-group container text-center">
                
-                
-                         <div id="cont" class="container mt-3 ">
-                          <button class="btn btn-success btn-lg" @click="jugar()" style="margin-top: 20px; margin-right: 50px;">JUGAR</button>
-                           <!--<button class="btn btn-primary" @click="elegir" style="display: none;">ELIJE PARTICIPANTES</button>
-                      
-                              <div class="container mt-3 " id="resultado" style="display: none;"> </div>  
-                             
-                            
-                             <div class="container mt-3"id="resultado2"></div> -->
-
+                         <div id="cont" class="container mt-1 text-center">
+                          <button class="btn btn-success btn-lg" @click="jugar()" >JUGAR</button>
                          </div>
                 
-                        <div id="cont2" class="container mt-5 " style="display: none;">
+                        <div id="cont2" style="display: none;">
 
-                          <div class="container mt-3 text-center" id="neon">
+                                <div  class="text-center" id="neon">
                           
-                              <p id="reto">Los participantes deben : {{reto}}</p>
+                                      <p id="reto">Los participantes deben : {{reto}}</p>
 
-                          </div>
-                    
-                             <h3>{{va}} debe elegir un numero del 1 al 3:</h3>
-                             <div id="elegirnum" class="container text-center ">
-                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
-                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
-                             <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
-                             </div>
-                              <h3>{{vari}} debe elegir un numero del 1 al 3</h3>
-                              <div id="elegirnum" class="container text-center ">
-                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
-                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
-                                <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
                                 </div>
+                    
+                                <h3>{{va}} debe elegir un numero del 1 al 3:</h3>
+                                     <div id="elegirnum" class="container text-center ">
+                                         <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(1)">1</button>
+                                         <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(2)">2</button>
+                                         <button type="button" class="btn btn-light" :disabled="deshabilitado1" @click="numelegido1(3)">3</button>
+                                      </div>
+                                 <h3>{{vari}} debe elegir un numero del 1 al 3</h3>
+                                      <div id="elegirnum" class="container text-center ">
+                                        <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(1)">1</button>
+                                         <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(2)">2</button>
+                                         <button type="button" class="btn btn-secondary" :disabled="deshabilitado2" @click="numelegido2(3)">3</button>
+                                      </div>
 
-                                <button class="btn btn-success btn-lg" @click="comparar()" style="margin-top: 20px;">RESULTADO</button>
+                                <button class="btn btn-success btn-lg" @click="comparar()" style="margin-top: 10px; margin-bottom: 10px;">RESULTADO</button>
 
-
-
-                                <div> </div>
                  
-                             </div>
+                         </div>
                 
-             </div>
+            </div>
+
+        </div>
+      </div>
 
            
 
-            
+
+      <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="01.js"></script>
         <script src="prob.js"></script>
+   
         </body>
    
 </html>
