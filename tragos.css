@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+
+ 
+}
+ul li {
+  position: relative;
+  margin: 0.25em;
+  text-align: center;
+
+}
+ul li a {
+  display: block;
+  padding: 0.55em 1em;
+  text-decoration: none;
+  color: #d9d9d9;
+  border-radius: 0.35em;
+  background-color: rgba(33, 37, 41, 0.25);
+  transition: all 200ms ease;
+
+}
+ul li a:hover {
+  color: #ffffff;
+  background-color: rgba(33, 37, 41, 0.65);
+}
+ul li a.active {
+  background-color: rgba(33, 37, 41, 0.45);
+}
+ul li ul li a {
+  background-color: black;
+  opacity: 80%;
+
+
+}
+ul#navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+.dropdown {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%) rotatex(90deg) scale(0);
+  margin-top: 0.55em;
+  transform-origin: 0 0;
+  border-radius: 0.35em;
+  background-color: rgba(33, 37, 41, 0.15);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 200ms linear;
+  z-index:3;
+}
+.dropdown.isOpen {
+  transform: translatex(-50%);
+  visibility: visible;
+  opacity: 1;
+}
+
+body {
+    position: absolute;
+    overflow: auto;
+    align-items: flex-start;
+    padding-top: 1.5em;
+    padding-bottom: 4em;
+    min-height: 100vh;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: currentcolor;
+    text-align: center;
+  }
+ 
+
+  h1 {
+    display: flex;
+    align-items: center;
+    position:relative;
+    color: rgb(192, 187, 187);
+    font-family: 'Dancing Script';
+    justify-content: center;
+    justify-items: center;
+  }
+   
+
+  h1::after, h1::before{
+    content: '';
+    position: absolute;
+    width:300px;
+    height:1.5px;
+    background-color: currentColor;
+    top:1.1em;
+    transform: scale(0);
+    transition:all 0.4s ease-in;
+    z-index:1;
+  }
+
+  h1:hover::before, h1:hover::after{
+    transform: scale(1);
+    z-index:1;
+  }
+
+ 
+  #app3{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    top: 16%;
+  }
+
