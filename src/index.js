@@ -1,0 +1,35 @@
+const express = require('express');
+const path = require('path');
+const multer = require('multer');
+const methodOverride = require('method-override');
+
+//Inicializaciones
+const app = express();
+require('./database');
+
+// Settings
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
+app.set('views engine', 'ejs');
+
+// Middlewares
+app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(multer({dest: path.join(__dirname, 'public/img/uploads')}).single('image'));
+
+
+// Global Variables
+
+// Routes
+app.use(require('./routes'))
+
+
+//Static Files
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Server is listenning
+app.listen(app.get('port'), () => {
+    console.log('Server on port', app.get('port'));
+});
