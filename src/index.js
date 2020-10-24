@@ -16,7 +16,13 @@ app.set('views engine', 'ejs');
 // Middlewares
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
-app.use(multer({dest: path.join(__dirname, 'public/img/uploads')}).single('image'));
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/img/uploads'),
+    filename: (req, file, cb, filename) => {
+        cb(null, file.originalname );
+    }
+});
+app.use(multer({storage: storage}).single('image'));
 
 
 // Global Variables
