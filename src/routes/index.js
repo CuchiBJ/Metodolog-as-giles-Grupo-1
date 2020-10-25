@@ -2,6 +2,7 @@ const { Router } = require('express');
 const path = require('path');
 const router = Router();
 const Trago = require('../models/Trago')
+const Reto = require('../models/Reto')
 
 router.get('/', (req, res) => {
     res.render('Inicio.html');
@@ -19,6 +20,29 @@ router.get('/tragos', async (req, res) => {
     const tragos = await Trago.find();
     res.render('tragos.html' , {tragos: tragos});
 });
+
+router.get('/agregarreto', (req, res) => {
+
+    res.render('agregarreto.html');
+})
+
+router.get('/api/retos' , async (req, res) => {
+    const retos = await Reto.find();
+    res.json(retos);
+});
+
+router.post('/agregarreto', async (req, res) => {
+    const reto = new Reto();
+
+    reto.reto = req.body.reto;
+ 
+  
+    await reto.save();
+
+    res.redirect('/agregarreto');
+
+    
+})
 
 router.get('/agregartrago', (req, res) => {
     res.render('agregartrago.html');
