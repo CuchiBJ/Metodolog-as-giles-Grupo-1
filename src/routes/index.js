@@ -16,8 +16,9 @@ router.get('/probabilidad', (req, res) => {
     res.render('probabilidad.html');
 });
 
-router.get('/tragos', (req, res) => {
-    res.render('tragos.html');
+router.get('/tragos', async (req, res) => {
+    const tragos = await Trago.find();
+    res.render('tragos.html' , {tragos: tragos});
 });
 
 router.get('/agregarreto', (req, res) => {
@@ -40,7 +41,7 @@ router.post('/agregarreto', async (req, res) => {
 
 router.get('/agregartrago', (req, res) => {
     res.render('agregartrago.html');
-})
+});
 
 router.post('/agregartrago', async (req, res) => {
     const trago = new Trago();
@@ -54,6 +55,11 @@ router.post('/agregartrago', async (req, res) => {
     await trago.save();
 
     res.redirect('/tragos');
-})
+});
+
+router.get('/api/tragos' , async (req, res) => {
+    const tragos = await Trago.find();
+    res.json(tragos);
+});
 
 module.exports = router;
