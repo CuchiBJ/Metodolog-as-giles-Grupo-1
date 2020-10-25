@@ -26,7 +26,10 @@ router.get('/agregarreto', (req, res) => {
     res.render('agregarreto.html');
 })
 
-router.get('/api/retos')
+router.get('/api/retos' , async (req, res) => {
+    const retos = await Reto.find();
+    res.json(retos);
+});
 
 router.post('/agregarreto', async (req, res) => {
     const reto = new Reto();

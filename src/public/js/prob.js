@@ -10,33 +10,37 @@ const app2 = new Vue({
       num:'',
       numer:'',
       vari:'',
-      retos: [
-        'Comerse un ajo',
-        'Decirle un piropo atrevido a alguien desconocido en instagram',
-        'Suplicar a su ex que vuelvan',
-        'Intercambiar toda la vestimenta con un jugador del otro género',
-        'Cantar una balada romántica a capela',
-        'Darle un beso al jugador de su izquierda',
-        'Publicar en el muro de Facebook de un contacto casado algún mensaje picante',
-        'Hacer una confesión falsa a su mamá',
-        'Uno de los participantes tiene que pegarle una cachetada al otro, sino toman',
-        'Hacer fondo',
-        'No pueden ir al baño hasta que vuelvan a salir sus nombres',
-        'Parados el resto de la previa',
-        'Debajo de la mesa hasta que vuelvan a salir sus nombres',
-        'Hacer un karaoke en dueto',
-        'Tomar con su mano no habil el resto del juego',
-        'Entregan sus celulares al resto de la previa, se revisa todo',
-        'Subir una historia a instagram haciendo algo que el resto de la previa elija (Por ejemplo: cantando)',
-        'Confesarle el amor a uno de sus contactos (A eleccion de los participantes de la previa)',
-        'Besen cada uno una oreja, del jugador que escojan'
-    
-      ],
+      retos: [],
+       //'Comerse un ajo',
+        //'Decirle un piropo atrevido a alguien desconocido en instagram',
+        //'Suplicar a su ex que vuelvan',
+        //'Intercambiar toda la vestimenta con un jugador del otro género',
+        //'Cantar una balada romántica a capela',
+        //'Darle un beso al jugador de su izquierda',
+        //'Publicar en el muro de Facebook de un contacto casado algún mensaje picante',
+        //'Hacer una confesión falsa a su mamá',
+        //'Uno de los participantes tiene que pegarle una cachetada al otro, sino toman',
+        //'Hacer fondo',
+        //'No pueden ir al baño hasta que vuelvan a salir sus nombres',
+        //'Parados el resto de la previa',
+        //'Debajo de la mesa hasta que vuelvan a salir sus nombres',
+        //'Hacer un karaoke en dueto',
+        //'Tomar con su mano no habil el resto del juego',
+        //'Entregan sus celulares al resto de la previa, se revisa todo',
+        //'Subir una historia a instagram haciendo algo que el resto de la previa elija (Por ejemplo: cantando)',
+        //'Confesarle el amor a uno de sus contactos (A eleccion de los participantes de la previa)',
+        //'Besen cada uno una oreja, del jugador que escojan'
+    //]
       largo:'',
       reto:''
    
       
         },
+
+        
+         created() {
+             this.obtenerRetos();
+            },
 
     methods: {
         numelegido1(value) {
@@ -47,6 +51,16 @@ const app2 = new Vue({
             this.num2 = value;
             console.log(this.num2);
         },
+
+        obtenerRetos(){
+            fetch('/api/retos')
+              .then(res => res.json())
+              .then( data => {
+                this.retos = data;
+                console.log(retos);
+              })
+              .catch(err=>console.log(err))
+          },
 
         jugar() {
             
