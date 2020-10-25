@@ -40,6 +40,8 @@ router.post('/agregarreto', async (req, res) => {
     await reto.save();
 
     res.redirect('/agregarreto');
+
+    
 })
 
 router.get('/agregartrago', (req, res) => {
