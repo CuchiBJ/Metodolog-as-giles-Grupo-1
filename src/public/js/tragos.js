@@ -49,8 +49,11 @@ const app = new Vue({
 
    //],
 
+   tragoseleccionado: null,
    filterField: ''
-    
+  ,
+   selecciono:false,
+   noselecciono:true,
   },
 
   created() {
@@ -71,6 +74,18 @@ const app = new Vue({
             console.log(tragos);
           })
           .catch(err=>console.log(err))
+      },
+
+      seleccionartrago(trago){
+        console.log(trago)
+        this.selecciono=true
+        this.noselecciono=false
+        this.tragoseleccionado=trago
+      },
+      deseleccionartrago(){
+        this.selecciono=false
+        this.noselecciono=true
+        this.tragoseleccionado=null
       }
     
   }
