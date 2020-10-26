@@ -71,7 +71,7 @@ const app = new Vue({
           .then(res => res.json())
           .then( data => {
             this.tragos = data;
-            console.log(tragos);
+            console.log(this.tragos);
           })
           .catch(err=>console.log(err))
       },
