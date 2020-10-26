@@ -37,7 +37,7 @@ const app2 = new Vue({
               .then(res => res.json())
               .then( data => {
                 this.retos = data;
-                console.log(retos);
+                console.log(this.retos);
 
               })
               .catch(err=>console.log(err))
