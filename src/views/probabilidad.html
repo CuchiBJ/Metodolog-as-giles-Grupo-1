@@ -4,45 +4,71 @@
         <meta charset="UTF-8">
         <title>NI EN PEDO | ¿Qué probabilidad hay?</title>
         <link rel="icon" href="/images/ico.ico" type="image/x-icon ">
-        <link rel=stylesheet href="/styles/estilos2.css" type="text/css">
+        <link rel=stylesheet href="styles/estilos2.css" type="text/css">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <meta name = viewport content = "width = device-width, initial-scale = 1.0, minimum-scale = 0.5 maximum-scale = 1.0" > 
+        <meta name = viewport content = "width = device-width, initial-scale = 1.0, minimum-scale = 0.5 maximum-scale = 1.0" >
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head> 
-        <body id="bod" style="overflow:visible; color: currentcolor;
+        <body id="bod" style="overflow:visible; 
         width: 100%;
         height:100%;
-        background: url(/images/probass.jpg); 
+        background-image: url(images/probass.jpg); 
         background-size: cover;
         background-position: center;
-     
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-origin: content-box;
+        
+        
          ">
+         
 
-          <div style="  position: absolute; 
-          right: 4%; 
-          top: 15%;
-          display: block;  ">
-         <a href="/agregarreto"><button type="button" class="btn btn-danger">Agregar reto</button></a>
-        </div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<nav class="navbar navbar-light navbar-expand-lg"style="background-color: gray; position: absolute; z-index: 1; width: 100%; margin-top:-30px">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/">
-    <img src="/images/MARTINE.gif" width="30" height="30" class="d-inline-block align-top" alt="">
-  </a>
-  <div class="collapse navbar-collapse  justify-content-center" id="navbarTogglerDemo01">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" style="color: white" href="/">Inicio</a>
-      <a class="nav-item nav-link" style="color: white" href="/participantes">Participantes</a>
-      <a class="nav-item nav-link" style="color: white" href="/probabilidad">¿Qué probabilidad hay?</a>
-      <a class="nav-item nav-link" style="color: white" href="/tragos">Tragos</a>
-    </div>
-  </div>
-</nav>
+    <a class="navbar-brand" href="/">    <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> </a>
+        
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
+        </li>
       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
+         Juegos
+          </a> 
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
+            <a class="dropdown-item" href="#"> Juego 2 </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
+        </li>
+      
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+
+  <div class="aloo">
+    <div style="  position: absolute; 
+         right: 4%; 
+         top: 15%;
+         display: block;  ">
+        <a href="/agregarreto"><button type="button" class="btn btn-danger">Agregar reto</button></a>
+       </div>
       <div id="app2">
 
        <div class="container mt-3 text-center"> 
@@ -85,7 +111,7 @@
 
         </div>
       </div>
-
+    </div>
            
 
 
