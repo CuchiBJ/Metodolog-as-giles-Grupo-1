@@ -100,7 +100,7 @@ const app2 = new Vue({
             
                 swal("Deben realizar el reto!!!", this.reto);
 
-            } if (this.num1 == this.num2 && this.num1 != '' && this.num2 != '' ){
+            } if (this.num1 != this.num2 && this.num1 != '' && this.num2 != '' ){
               
                 swal("Zafaron!!...", "...Por ahora!");
             } if (this.num1 == '' && this.num2 == '') {
