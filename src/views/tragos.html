@@ -35,7 +35,7 @@
         
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
         </li>
         <li class="nav-item">
@@ -52,7 +52,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
+          <a class="nav-link active" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
       
       </ul>
@@ -104,6 +104,7 @@
             <img class="card-img-top" v-if="selecciono" v-bind:src=tragoseleccionado.path alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{tragoseleccionado.nombre}} </h5>
+              <p class="card-text"> Ingredientes: <br> {{tragoseleccionado.ingredientes}} </p>
               <p class="card-text"> Preparación: <br> {{tragoseleccionado.preparacion}} </p>
               <p class="card-text"> Graduación alcohólica: {{tragoseleccionado.graduacion}} </p>
               <button v-on:click="deseleccionartrago()" type="button" class="btn btn-primary"> Volver</button>
