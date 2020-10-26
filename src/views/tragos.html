@@ -54,9 +54,7 @@
         <li class="nav-item">
           <a class="nav-link active" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/reproductor">  <span class="icon-spotify"> </span> Reproductor  </a>
-        </li>
+      
       </ul>
     </div>
   </nav>
@@ -101,8 +99,8 @@
         </table>
         </div>   
         
-        <div class="container" v-if="selecciono">
-          <div class="card" style="width: 40rem;">
+        <div class="container" id="containercarta" v-if="selecciono">
+          <div class="card" style="width: 100%;">
             <img class="card-img-top" v-if="selecciono" v-bind:src=tragoseleccionado.path alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{tragoseleccionado.nombre}} </h5>
@@ -113,6 +111,7 @@
             </div>
           </div>
         </div>
+      </div>
      
       </div>
       </div>
