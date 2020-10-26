@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 *,
 ::before,
 ::after {
@@ -52,52 +52,17 @@ ul#navigation {
   position: relative;
 }
 
-
-.dropdown {
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%) rotatex(90deg) scale(0);
-  margin-top: 0.55em;
-  transform-origin: 0 0;
-  border-radius: 0.35em;
-  background-color: rgba(33, 37, 41, 0.15);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 200ms linear;
-  z-index:3;
-}
-.dropdown.isOpen {
-  transform: translatex(-50%);
-  visibility: visible;
-  opacity: 1;
-}
-
-body {
-    position: absolute;
-    overflow: auto;
-    align-items: flex-start;
-    padding-top: 1.5em;
-    padding-bottom: 4em;
-    min-height: 100vh;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: currentcolor;
-    text-align: center;
-  }
  
 
   h1 {
     display: flex;
     align-items: center;
     position:relative;
-    color: rgb(192, 187, 187);
+    color: rgb(206, 202, 202);
     font-family: 'Dancing Script';
     justify-content: center;
     justify-items: center;
+    z-index:1;
   }
    
 
@@ -124,7 +89,45 @@ body {
     position: absolute;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
     align-items: flex-start;
     top: 16%;
+    align-items: center;
   }
 
+ .alo{
+    position: relative;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    min-height: 100vh;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-size: cover;
+    background-attachment: fixed;
+  
+  }
+  
+  #main-header {
+    background: #333;
+    height: 80px;
+    
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    top: 0; /* Posicionamos la cabecera pegada arriba */
+    position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+  }
+  
+  
+  header {
+    background-color: rgb(22, 21, 24);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+ 
+  }
+  

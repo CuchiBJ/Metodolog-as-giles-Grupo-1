@@ -56,6 +56,7 @@ ul#navigation {
   align-items: flex-start;
   top: 20%;
 
+
 }
 
 
@@ -97,58 +98,23 @@ ul#navigation {
 
 }
 
-.dropdown {
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%) rotatex(90deg) scale(0);
-  margin-top: 0.55em;
-  transform-origin: 0 0;
-  border-radius: 0.35em;
-  background-color: rgba(33, 37, 41, 0.15);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 200ms linear;
-  z-index:3;
-}
-.dropdown.isOpen {
-  transform: translatex(-50%);
-  visibility: visible;
-  opacity: 1;
-}
 
 
-
-
-body {
-  position: relative;
-  overflow: auto;
-  padding-top: 1.5em;
-  padding-bottom: 4em;
-  min-height: 100vh;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
- background-size: cover;
- background-attachment: fixed;
- position: relative;
-}
 
 
 h1 {
   display: flex;
   align-items: center;
   position:relative;
-  color: rgb(255, 255, 255);
-  font-family: 'Dancing Script';
+  color: rgb(218, 208, 208);
+  font-family: 'dancing script';
   justify-content: center;
   justify-items: center;
+
 }
- 
+
+
+
 
 h1::after, h1::before{
   content: '';
@@ -164,6 +130,8 @@ h1::after, h1::before{
 h1:hover::before, h1:hover::after{
   transform: scale(1);
 }
+
+
 #elegirnum button {
   border-radius: 50%;
   text-align: center;
@@ -213,4 +181,33 @@ h3 {
   margin-top: 3%;
   margin-bottom: 3%;
   font-family: 'Cousine', monospace;
+}
+
+
+.aloo{
+  position: relative;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+  min-height: 100vh;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+
+header {
+  background-color: rgb(22, 21, 24);
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
 }
