@@ -35,7 +35,7 @@
         
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
         </li>
         <li class="nav-item">
@@ -46,13 +46,13 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
          Juegos
           </a> 
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
-            <a class="dropdown-item" href="#"> Juego 2 </a>
+          <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item text-light bg-dark" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
+            <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
+          <a class="nav-link active" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/reproductor">  <span class="icon-spotify"> </span> Reproductor  </a>
@@ -72,8 +72,7 @@
      </div>
      <div id="app3">
      
-
-        <div class="container mt-3"> 
+        <div class="container mt-3" v-if="noselecciono"> 
             <h1 class="lines-effect">Busca tu trago ideal </h1> 
             
          <div class="form-group">
@@ -86,14 +85,15 @@
          </div>
     
 
-           <table class= "table table-hover table-dark table-bordered  ">
+           <table class= "table table-hover table-dark table-bordered">
                <tr>
                    <th> Tipos tragos</th>
-                   <th> Ingredientes    </th>
+                   <th> Ingredientes</th>
                </tr>
             <tr v-if="filter(trago)" v-for="trago in tragos">
                 <td> {{trago.nombre}} </td>
-                <td> {{trago.ingredientes}} </td>
+                <td> {{trago.ingredientes}}  <button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button>
+                </td>
             </tr>
 
        
@@ -101,8 +101,22 @@
         </table>
         </div>   
         
-     </div>
-   </div>
+        <div class="container" v-if="selecciono">
+          <div class="card" style="width: 40rem;">
+            <img class="card-img-top" v-if="selecciono" v-bind:src=tragoseleccionado.path alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{tragoseleccionado.nombre}} </h5>
+              <p class="card-text"> Ingredientes: <br> {{tragoseleccionado.ingredientes}} </p>
+              <p class="card-text"> Preparación: <br> {{tragoseleccionado.preparacion}} </p>
+              <p class="card-text"> Graduación alcohólica: {{tragoseleccionado.graduacion}} </p>
+              <button v-on:click="deseleccionartrago()" type="button" class="btn btn-primary"> Volver</button>
+            </div>
+          </div>
+        </div>
+     
+      </div>
+      </div>
+    
 
   
  
