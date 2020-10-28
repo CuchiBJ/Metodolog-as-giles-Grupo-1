@@ -90,8 +90,8 @@
                </tr>
             <tr v-if="filter(trago)" v-for="trago in tragos">
                 <td> {{trago.nombre}} </td>
-                <td> {{trago.ingredientes}}  <button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button>
-                </td>
+                <td> {{trago.ingredientes}} </td> 
+                <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
             </tr>
 
        
