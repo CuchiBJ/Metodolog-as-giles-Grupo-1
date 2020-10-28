@@ -72,4 +72,5 @@ router.get('/api/tragos' , async (req, res) => {
     res.json(tragos);
 });
 
+
 module.exports = router;

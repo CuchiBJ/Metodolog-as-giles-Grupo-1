@@ -55,9 +55,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/reproductor">  <span class="icon-spotify"> </span> Reproductor  </a>
-        </li>
       </ul>
     </div>
   </nav>
@@ -115,7 +112,44 @@
       </div>
     </div>
            
+<!-- Button trigger modal-->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalYT"> Música atr</button>
 
+<!--Modal: modalYT-->
+<div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Body-->
+      <div class="modal-body mb-0 p-0">
+
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMMy2roB9myp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+      </div>
+
+     <!--Footer-->
+     <div class="modal-footer justify-content-center flex-column flex-md-row"  style="background-color:rgb(223, 211, 211)";>
+      <span class="mr-4"><i> Y metele play </i></span>
+      
+      <button type="button" class="btn btn-outline-danger btn-rounded btn-md ml-4"
+        data-dismiss="modal"> Cerrar </button>
+
+      </div>
+
+    </div>
+    <!--/.Content-->
+
+  </div>
+</div>
+<!--Modal: modalYT-->
+
+
+      
 
       <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
 
