@@ -12,6 +12,11 @@ router.get('/participantes', (req, res) => {
     res.render('participantes.html');
 });
 
+router.get('/reproductor', (req, res) => {
+
+    res.render('reproductor.html');
+});
+
 router.get('/probabilidad', (req, res) => {
     res.render('probabilidad.html');
 });
@@ -66,5 +71,6 @@ router.get('/api/tragos' , async (req, res) => {
     const tragos = await Trago.find();
     res.json(tragos);
 });
+
 
 module.exports = router;
