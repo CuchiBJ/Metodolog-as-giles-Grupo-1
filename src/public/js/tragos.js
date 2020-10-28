@@ -63,7 +63,8 @@ const app = new Vue({
   methods:{
       filter(trago){
           console.log(trago.ingredientes+" "+this.filterField)
-          return trago.ingredientes.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase())
+          return trago.ingredientes.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase()) ||
+          trago.nombre.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase())
       },
 
       obtenerTragos(){
