@@ -68,6 +68,31 @@
          display: block;  ">
         <a href="/agregarreto"><button type="button" class="btn btn-danger">Agregar reto</button></a>
        </div>
+    <div style="  position: absolute; 
+       left: 4%; 
+       top: 15%;
+       display: block;  ">
+      <a href="#ventana" class="btn btn-success" data-toggle="modal"> ¿De qué se trata el juego? </a>
+      <div class="modal" tabindex="-1" role="dialog" id="ventana">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">¿Qué probabilidad hay?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="/images/signo.png" style="width:60%; margin-left: 20%;"class="img-responsive center-block" alt="Cinque Terre">
+              <p class="text-center">Se eligen dos participantes al azar, estos deberán ingresar un número del 1 al 3 (sin saber lo que introdujo el otro) y, de coincidir el número, ambos deberán realizar el reto mostrado en pantalla</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
       <div id="app2">
 
        <div class="container mt-3 text-center"> 
