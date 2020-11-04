@@ -48,7 +48,7 @@
           </a> 
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item text-light bg-dark" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
-            <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
+            <a class="dropdown-item text-light bg-dark" href="/simondice"> Simon dice  </a>
           </div>
         </li>
         <li class="nav-item">
@@ -89,15 +89,23 @@
                    <th> Ingredientes</th>
                </tr>
             <tr v-if="filter(trago)" v-for="trago in tragos">
+            
                 <td> {{trago.nombre}} </td>
-                <td> {{trago.ingredientes}}  <button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button>
-                </td>
-            </tr>
+                <td> {{trago.ingredientes}}  <button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
+           
+            </tr> 
+          
+          
+          </td>
+        </td>
 
-       
-        
+   
         </table>
         </div>   
+
+
+
+        
         
         <div class="container" id="containercarta" v-if="selecciono">
           <div class="card" style="width: 100%;">
@@ -118,8 +126,7 @@
     
 
   
- 
-
+     
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="/js/tragos.js"> </script>

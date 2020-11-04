@@ -21,6 +21,15 @@ router.get('/probabilidad', (req, res) => {
     res.render('probabilidad.html');
 });
 
+router.get('/simondice', (req, res) => {
+    res.render('simondice.html');
+});
+
+router.get('/nose', (req, res) => {
+    res.render('nose.html');
+});
+
+
 router.get('/tragos', async (req, res) => {
     const tragos = await Trago.find();
     res.render('tragos.html' , {tragos: tragos});
