@@ -20,6 +20,9 @@ router.get('/reproductor', (req, res) => {
 router.get('/probabilidad', (req, res) => {
     res.render('probabilidad.html');
 });
+router.get('/imita', (req, res) => {
+    res.render('imita.html');
+});
 
 router.get('/tragos', async (req, res) => {
     const tragos = await Trago.find();

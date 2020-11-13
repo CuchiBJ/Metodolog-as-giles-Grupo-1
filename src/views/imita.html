@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NI EN PEDO | Imita o bebe</title>
+    <link rel="icon" href="/images/ico.ico" type="image/x-icon ">
+    <link rel=stylesheet href="styles/estilos2.css" type="text/css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name = viewport content = "width = device-width, initial-scale = 1.0, minimum-scale = 0.5 maximum-scale = 1.0" >
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+</head>
+<body id="bod" style="overflow:visible; 
+width: 100%;
+height:100%;
+background-image: url(images/telon2.jpeg); 
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-origin: content-box;
+
+
+ ">
+   <header>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <a class="navbar-brand" href="/">    <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> </a>
+              
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
+              </li>
+            
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
+               Juegos
+                </a> 
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item text-light bg-dark active" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
+                  <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
+                  <a class="dropdown-item text-light bg-dark" href="/imita"> Imita o bebe</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        </header>
+
+
+<div id="app8">
+
+    <div class="row m-0 bg-primaty justify-content-center aling-items-center vh-100" >
+        <div  class="col-sm-6 "style= "background-color: rgba(0,0,0,0.5)">
+            
+       
+              
+        
+            <div class="container m-3 text-center" style="top: 10%; position: relative;">
+                <h1 style="font-size: 50px; margin-bottom: 30px;"class="lines-effect">Imita o bebe </h1> 
+                <div id="mostrar" style=" visibility: visible;">
+                <h5 style="color: white;">Tu palabra es:</h5>
+                <p id="palabra" style=" position:relative; text-align: center;font-size: 50px; color:white;">{{palabra}} </p>
+               
+                <div class="container m-3 text-center">
+                    <span id="countdown" style="font-size: 50px; color:white;"></span>
+                </div>
+                </div>
+
+                <div id="mostrar2" style=" visibility: hidden;">
+                    <p style=" position:relative; text-align: center;font-size: 20px; color: white;">Bien hecho!Pasale el dispositivo al siguiente participante</p>
+                </div>
+
+                <button :disabled="deshabilitado" type="button" class="btn btn-light" @click="visibilidad(); elegirpalabra()"> Inicio </button>  
+                <button :disabled="deshabilitado2"  type="button" class="btn btn-light" @click="detenerreloj()"> Hecho </button>  
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/imita.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
