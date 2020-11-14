@@ -2,11 +2,12 @@ const app8 = new Vue({
     el: '#app8',
     data: {
     segundoInicio :"10",
-    palabras: ['patineta', 'dinosaurio', 'tiburon', 'ardilla', 'enamorado'],
+    palabras: ['Patineta', 'Dinosaurio', 'Tiburon', 'Ardilla', 'Enamorado'],
     palabra: '',
     largo:'',
     num:'',
-    estado:''
+    estado:'',
+    estados:''
     
     },
     created() {
@@ -32,18 +33,19 @@ const app8 = new Vue({
 
 
             document.getElementById("countdown").innerHTML = this.segundoInicio;
-         
-               if (this.segundoInicio == 0){
-                   
-
-                    this.segundoInicio = 10 
-
-             } else {
+            var estados = document.getElementById("mostrar").style.visibility
+               if (this.segundoInicio == 0 && estados == 'visible'){
                 
-                  this.segundoInicio = this.segundoInicio - 1;
-                 setTimeout(this.actualizartiempo, 1E3);   
-  
-             }
+                    swal('Perdiste!!! A tomar ')
+                
+             } 
+             if(this.segundoInicio == 0){
+                this.segundoInicio = 10        
+            }else{
+                    
+                this.segundoInicio = this.segundoInicio - 1;
+                setTimeout(this.actualizartiempo, 1E3);   
+            }
             }
 
         ,
@@ -51,7 +53,7 @@ const app8 = new Vue({
 
             document.getElementById("mostrar").style.visibility= 'hidden';
             document.getElementById("mostrar2").style.visibility= 'visible';
-            this.segundoInicio = 1
+            this.segundoInicio = 0
         }
 
       ,
