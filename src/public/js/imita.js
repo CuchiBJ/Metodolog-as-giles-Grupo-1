@@ -39,7 +39,7 @@ const app8 = new Vue({
                     swal('Perdiste!!! A tomar ')
                 
              } 
-             if(this.segundoInicio == 0){
+             if(this.segundoInicio <= 0){
                 this.segundoInicio = 10        
             }else{
                     
@@ -67,8 +67,7 @@ const app8 = new Vue({
     },
     computed: {
         deshabilitado(){
-            return this.segundoInicio === 1 || this.segundoInicio === 2 || this.segundoInicio === 3 || this.segundoInicio === 4|| this.segundoInicio === 5
-            ||this.segundoInicio === 6 || this.segundoInicio === 7 || this.segundoInicio === 8 || this.segundoInicio === 9 ;
+            return this.segundoInicio >= 0 && this.segundoInicio<10;
         },
         deshabilitado2(){
             return  this.estado === 'hidden' || this.segundoInicio === 10
