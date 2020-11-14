@@ -2,7 +2,7 @@ const app8 = new Vue({
     el: '#app8',
     data: {
     segundoInicio :"10",
-    palabras: ['Patineta', 'Dinosaurio', 'Tiburon', 'Ardilla', 'Enamorado'],
+    palabras: ['Patineta', 'Dinosaurio', 'Tiburon', 'Ardilla', 'Enamorado','Fantasma','Musculos','Maletin','Astronauta','Espada','Ventilador','Profesor','Snowboard','Arco Iris','Niebla','Globo','Escoba','Nube','Corte de pelo','Luna'],
     palabra: '',
     largo:'',
     num:'',
