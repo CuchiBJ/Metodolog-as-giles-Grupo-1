@@ -201,6 +201,21 @@ h3 {
 
 }
 
+#countdown{
+  font-weight: bold;
+  color: #fff;
+
+	text-shadow:
+		0 0 5px rgb(255, 0, 149),
+		0 0 10px rgb(255, 0, 149),
+		0 0 20px rgb(255, 0, 149),
+		0 0 40px rgb(127, 38, 112),
+		0 0 80px rgba(127, 38, 112),
+		0 0 90px rgba(127, 38, 112),
+		0 0 100px rgb(127, 38, 93),
+		0 0 140px rgba(127, 38, 93),
+		0 0 180px rgba(127, 38, 93);
+}
 
 header {
   background-color: rgb(22, 21, 24);
@@ -211,4 +226,5 @@ header {
   left: 0;
 
 }
+
 
