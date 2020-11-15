@@ -58,19 +58,30 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
               </li>
+              <div id="menu">
+                <div v-if="logueado">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" v-on:click="logout()">  <span class="icon-home2"> </span> Logout</a>
+                    </li>
+                  </ul>
+                </div>
+                <div v-else>
+                  <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/signin">  <span class="icon-home2"> </span> Login</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/users/signup">   Registrarse  </span></a>
+                  </li>
+                  </ul>
+                </div>         
+                
+              </div>
               
             </ul>
             
           </div>
-          <ul class="navbar-nav">
-            <li id="menu" class="nav-item">
-              <a v-if="logueado" class="nav-link" v-on:click="logout()">  <span class="icon-home2"> </span> Logout  </span></a>
-            <div class="d-flex " v-else>
-              <a class="nav-link mr-2 p-1" href="/users/signin">  <span class="icon-home2"> </span> Login  </span></a>
-              <a class="nav-link p-1" href="/users/signup">   Registrarse  </span></a>
-            </div>         
-            </li>
-          </ul>
         </nav>
         </header>
   
@@ -150,14 +161,20 @@
               
             </td>
             <td> {{trago.ingredientes}} </td> 
-            <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
-            <td v-if="cAdmin">
-              <a v-if="cAdmin" href="#ventana" v-on:click="editartrago(trago)" data-toggle="modal" class="btn btn-success btn-block btn-sm"><i class="fa fa-pencil"></i></a>
-              <form v-if="cAdmin" v-on:submit.prevent="deletetrago(trago)" method="POST">
+            <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" ><i class="fa fa-search"></i></button>
+              <button v-if="cAdmin" href="#ventana" v-on:click="editartrago(trago)" data-toggle="modal" class="btn btn-success btn-block btn-sm"><i class="fa fa-pencil"></i></button>
+              <form  v-on:submit.prevent="deletetrago(trago)" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="btn btn-danger btn-block btn-sm"><i class="fa fa-trash"></i></button>
+                <button v-if="cAdmin" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
               </form>
             </td>
+            <!--<td style="padding: 0%;" v-if="cAdmin">
+              <button v-if="cAdmin" href="#ventana" v-on:click="editartrago(trago)" data-toggle="modal" class="btn btn-success btn-block btn-sm"><i class="fa fa-pencil"></i></button>
+              <form v-if="cAdmin" v-on:submit.prevent="deletetrago(trago)" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+              </form>
+            </td>-->
           </tr>
         </table>
 
