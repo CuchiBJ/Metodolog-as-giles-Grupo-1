@@ -8,7 +8,7 @@ const app = new Vue({
       graduacion: '',
       filename: '',
       path: ''
-    }, 
+    },
     tragos: [], //[ 
       //{name:'Margarita', ing: 'Tequila, triple seco y jugo de lima'},
       //{name:'Mojito', ing: 'Ron, azucar, menta, lima, agua con gas  y hielo '},
