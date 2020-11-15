@@ -24,7 +24,7 @@
            ">
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark ">
+  <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,11 +33,11 @@
         
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item ">
+        <li class="nav-item active">
           <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
+          <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
         </li>
       
         <li class="nav-item dropdown">
@@ -52,9 +52,20 @@
         <li class="nav-item">
           <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
-       
+        
       </ul>
+      
     </div>
+    <ul class="navbar-nav">
+      <li id="menu" class="nav-item active">
+        <a v-if="logueado" class="nav-link" v-on:click="logout()">  <span class="icon-home2"> </span> logout  </span></a>
+      <div class="d-flex " v-else>
+        <a class="nav-link mr-2 p-1" href="/users/signin">  <span class="icon-home2"> </span> Login  </span></a>
+        <a class="nav-link p-1" href="/users/signup">   Registrarse  </span></a>
+      </div>
+      
+      </li>
+    </ul>
   </nav>
   </header>
 
@@ -114,9 +125,9 @@
 
                     
 
-            
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-         
+        <script src="/js/menu.js"> </script>
         <script src="/js/nom.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

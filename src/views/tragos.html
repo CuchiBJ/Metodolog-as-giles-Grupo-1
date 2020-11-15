@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <meta name = viewport content = "width = device-width, initial-scale = 1.0, minimum-scale = 0.5 maximum-scale = 1.0" >
-    </head> 
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <script src="https://use.fontawesome.com/796a6c5cdf.js"></script>
+      </head> 
         <body style=" color: currentcolor;
         width: 100%;
         height:600px;
@@ -25,40 +27,52 @@
          ">
        
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand" href="/">    <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> </a>
-        
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
-        </li>
+       <header>
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
       
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
-         Juegos
-          </a> 
-          <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item text-light bg-dark" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
-            <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
+          <a class="navbar-brand " href="/">    
+            <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> 
+          </a>
+              
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="/">  <span class="icon-home2"> </span> Inicio  </span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
+              </li>
+            
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
+               Juegos
+                </a> 
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item text-light bg-dark" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
+                  <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
+                </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
+              </li>
+              
+            </ul>
+            
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
-        </li>
-      
-      </ul>
-    </div>
-  </nav>
-  </header>
+          <ul class="navbar-nav">
+            <li id="menu" class="nav-item">
+              <a v-if="logueado" class="nav-link" v-on:click="logout()">  <span class="icon-home2"> </span> Logout  </span></a>
+            <div class="d-flex " v-else>
+              <a class="nav-link mr-2 p-1" href="/users/signin">  <span class="icon-home2"> </span> Login  </span></a>
+              <a class="nav-link p-1" href="/users/signup">   Registrarse  </span></a>
+            </div>         
+            </li>
+          </ul>
+        </nav>
+        </header>
   
   
   <div class="alo">
@@ -69,34 +83,84 @@
       <a href="/agregartrago"><button type="button" class="btn btn-danger">Agregar Trago</button></a>
      </div>
      <div id="app3">
-     
+        <div class="modal" v-if="tragoeditar" tabindex="-1" role="dialog" id="ventana">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+             <div class="modal-header">
+                <h5 class="modal-title">Editar trago</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                      <input type="text" name="nombre" placeholder="Nombre del Trago" class="form-control my-3" v-model="tragoeditar.nombre" required>
+                      <input type="text" name="ingredientes" placeholder="Ingredientes" class="form-control my-3" v-model="tragoeditar.ingredientes" required>
+                      <textarea type="text" name="preparacion" placeholder="Preparación del trago" class="form-control my-3" v-model="tragoeditar.preparacion" required></textarea>
+                      <input type="text" name="graduacion" placeholder="Graduación Alcohólica" class="form-control my-3" v-model="tragoeditar.graduacion" required>
+                  </div>
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-success" v-on:click="cargartrago()" >Editar Trago</button>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container mt-3" v-if="noselecciono"> 
-            <h1 class="lines-effect">Busca tu trago ideal </h1> 
+          <h1 class="lines-effect">Busca tu trago ideal </h1> 
             
-         <div class="form-group">
-           
-       
-
-        <input type="text" placeholder="Busque por ingrediente o nombre" required v-model="filterField" class="form-control"> 
-
-      
-         </div>
-    
-
-           <table class= "table table-hover table-dark table-bordered">
-               <tr>
-                   <th> Tipos tragos</th>
-                   <th> Ingredientes</th>
-               </tr>
-            <tr v-if="filter(trago)" v-for="trago in tragos">
-                <td> {{trago.nombre}} </td>
-                <td> {{trago.ingredientes}} </td> 
-                <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
-            </tr>
-
-       
-        
+        <div class="form-group">
+          <input type="text" placeholder="Busque por ingrediente o nombre" required v-model="filterField" class="form-control"> 
+        </div>
+        <div v-if="cAdmin" class="p-1 mb-1 bg-dark text-light">
+           <h1 class="display-4" v-if="cAdmin">Tragos Propuestos</h1>
+        </div>
+                 
+         <table v-if="cAdmin"  v-bind="tragosP" class= "table table-hover table-dark table-bordered">
+          
+          <tr>
+            <th> Tipos tragos</th>
+            <th> Ingredientes</th>
+          </tr>
+          <tr v-for="trago in tragosP">
+            <td> {{trago.nombre}} <br> 
+            </td>
+            <td> {{trago.ingredientes}} </td> 
+            <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
+            <td>
+              <button type="button" v-on:click="aceptartrago(trago)" class="btn btn-success"> <i class="fa fa-check" aria-hidden="true"></i></button>
+              <button type="button" v-on:click="rechazartrago(trago)" class="btn btn-danger"><i class="fa fa-remove" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          <tr v-if="tragosP"><td v-if="nohaytragos()" colspan="2 ">No hay tragos propuestos</td></tr>
         </table>
+
+        <table v-bind="tragos" class= "table table-hover table-dark table-bordered">
+          <tr>
+            <th> Tipos tragos</th>
+            <th> Ingredientes</th>
+          </tr>
+          <tr v-if="filter(trago)" v-for="trago in tragos">
+            <td> {{trago.nombre}} <br> <button class="btn btn-lg" style="background-color:transparent;">
+              
+            </td>
+            <td> {{trago.ingredientes}} </td> 
+            <td><button v-on:click="seleccionartrago(trago)" type="button" class="btn btn-secondary btn-sm" >Ver más</button> </td>
+            <td v-if="cAdmin">
+              <a v-if="cAdmin" href="#ventana" v-on:click="editartrago(trago)" data-toggle="modal" class="btn btn-success btn-block btn-sm"><i class="fa fa-pencil"></i></a>
+              <form v-if="cAdmin" v-on:submit.prevent="deletetrago(trago)" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-block btn-sm"><i class="fa fa-trash"></i></button>
+              </form>
+            </td>
+          </tr>
+        </table>
+
         </div>   
         
         <div class="container" id="containercarta" v-if="selecciono">
@@ -114,15 +178,13 @@
       </div>
      
       </div>
-      </div>
+     
     
-
-  
- 
-
-
+    </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="/js/tragos.js"> </script>
+        <script src="/js/menu.js"> </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -22,12 +22,29 @@
          ">
 
             <a href="/tragos" > <button type="button" style="margin-top: 3%; margin-left: 3%;" class="btn btn-light">VOLVER</button> </a>
-            <div class="container p-4">
+            <div class="container p-4" id="app5">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <div class="card bg-dark">
                             <div class="card-body">
-                                <form action="/agregartrago" method="POST" enctype="multipart/form-data" >
+                                <form v-if="isAdmin()" action="/agregartrago" method="POST" enctype="multipart/form-data" >
+                                    <div class="form-group">
+                                        <input type="text" name="nombre" placeholder="Nombre del Trago" class="form-control my-3" required>
+                                        <input type="text" name="ingredientes" placeholder="Ingredientes" class="form-control my-3" required>
+                                        <textarea type="text" name="preparacion" placeholder="Preparación del trago" class="form-control my-3" required></textarea>
+                                        <input type="text" name="graduacion" placeholder="Graduación Alcohólica" class="form-control my-3" required>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="custom-file">
+                                          <input type="file" name="image" class="custom-file-input" id="inputGroupFile02" required>
+                                          <label class="custom-file-label" for="inputGroupFile02">Subir imagen Trago</label>
+                                        </div> 
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Agregar Trago</button>
+                                    </div>
+                                </form>
+                                <form v-else action="/agregartragoacarta" method="POST" enctype="multipart/form-data" >
                                     <div class="form-group">
                                         <input type="text" name="nombre" placeholder="Nombre del Trago" class="form-control my-3" required>
                                         <input type="text" name="ingredientes" placeholder="Ingredientes" class="form-control my-3" required>
@@ -52,8 +69,10 @@
                 </div>
 
             </div>
-
+        
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="../js/agregar.js"> </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
