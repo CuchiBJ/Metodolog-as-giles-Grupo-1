@@ -16,7 +16,6 @@ ul li {
   position: relative;
   margin: 0.25em;
   text-align: center;
-
 }
 ul li a {
   display: block;
@@ -24,9 +23,8 @@ ul li a {
   text-decoration: none;
   color: #d9d9d9;
   border-radius: 0.35em;
-  background-color: rgba(33, 37, 41, 0.25);
+  background-color: rgba(84, 97, 109, 0.25);
   transition: all 200ms ease;
-  
 }
 ul li a:hover {
   color: #ffffff;
@@ -36,9 +34,7 @@ ul li a.active {
   background-color: rgba(33, 37, 41, 0.45);
 }
 ul li ul li a {
-  background-color: black;
-  opacity: 80%;
-
+  background-color:rgb(83, 75, 78);
 }
 ul#navigation {
   display: flex;
@@ -201,6 +197,21 @@ h3 {
 
 }
 
+#countdown{
+  font-weight: bold;
+  color: #fff;
+
+	text-shadow:
+		0 0 5px rgb(255, 0, 149),
+		0 0 10px rgb(255, 0, 149),
+		0 0 20px rgb(255, 0, 149),
+		0 0 40px rgb(127, 38, 112),
+		0 0 80px rgba(127, 38, 112),
+		0 0 90px rgba(127, 38, 112),
+		0 0 100px rgb(127, 38, 93),
+		0 0 140px rgba(127, 38, 93),
+		0 0 180px rgba(127, 38, 93);
+}
 
 header {
   background-color: rgb(22, 21, 24);
@@ -211,4 +222,5 @@ header {
   left: 0;
 
 }
+
 

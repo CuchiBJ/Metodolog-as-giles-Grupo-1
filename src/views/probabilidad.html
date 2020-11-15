@@ -26,14 +26,15 @@
          ">
          
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand" href="/">    <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> </a>
+         <header>
+          <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+              <span class="navbar-toggler-icon"></span>
+            </button>
         
+          <a class="navbar-brand " href="/">    
+            <img src="/images/MARTINE.gif" width="40"height="40" class="d-inline-block align-top" alt=""> 
+          </a>    
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -43,18 +44,39 @@
           <a class="nav-link" href="/participantes">  <span class="icon-users"></span>   Participantes  </a>
         </li>
       
-        <li class="nav-item dropdown">
+        <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="icon-pacman"> </span>
          Juegos
           </a> 
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item text-light bg-dark active" href="/probabilidad"> ¿ Qué probabilidad hay ?</a>
-            <a class="dropdown-item text-light bg-dark" href="#"> Juego 2 </a>
+            <a class="dropdown-item text-light bg-dark" href="/simondice"> Simon dice </a>
+            <a class="dropdown-item text-light bg-dark" href="/imita"> Imita o bebe</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/tragos">  <span class="icon-glass2"> </span>  Tragos  </a>
         </li>
+        <div id="menu">
+          <div v-if="logueado">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" v-on:click="logout()">  <span class="icon-home2"> </span> Logout</a>
+              </li>
+            </ul>
+          </div>
+          <div v-else>
+            <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/users/signin">  <span class="icon-home2"> </span> Login</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/users/signup">   Registrarse  </span></a>
+            </li>
+            </ul>
+          </div>         
+          
+        </div>
       </ul>
     </div>
   </nav>
@@ -97,7 +119,7 @@
 
        <div class="container mt-3 text-center"> 
 
-                    <h1 class="lines-effect">¿Qué probabilidad hay? </h1> 
+                    <h1 > ¿Qué probabilidad hay?</h1> 
                        
             <div  class="form-group container text-center">
                
@@ -178,8 +200,10 @@
 
      
 
-      <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat:ital,wght@1,300&family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/js/menu.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="/js/prob.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

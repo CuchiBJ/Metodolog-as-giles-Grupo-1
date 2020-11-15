@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const multer = require('multer');
 const methodOverride = require('method-override');
-
+const passport = require('passport');
 //Inicializaciones
 const app = express();
 require('./database');
@@ -14,6 +14,9 @@ app.engine('html', require('ejs').renderFile);
 app.set('views engine', 'ejs');
 
 // Middlewares
+const AuthToken = require('./middlewares/AuthToken');
+app.use(AuthToken);
+
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 const storage = multer.diskStorage({
@@ -23,7 +26,8 @@ const storage = multer.diskStorage({
     }
 });
 app.use(multer({storage: storage}).single('image'));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Global Variables
 
