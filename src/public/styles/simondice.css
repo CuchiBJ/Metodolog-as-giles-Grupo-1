@@ -33,7 +33,6 @@ body > section.prin
 		position: relative;
 		margin: 0.25em;
 		text-align: center;
-	  
 	  }
 	  ul li a {
 		display: block;
@@ -41,9 +40,8 @@ body > section.prin
 		text-decoration: none;
 		color: #d9d9d9;
 		border-radius: 0.35em;
-		background-color: rgba(33, 37, 41, 0.25);
+		background-color: rgba(84, 97, 109, 0.25);
 		transition: all 200ms ease;
-		
 	  }
 	  ul li a:hover {
 		color: #ffffff;
@@ -53,9 +51,7 @@ body > section.prin
 		background-color: rgba(33, 37, 41, 0.45);
 	  }
 	  ul li ul li a {
-		background-color: black;
-		opacity: 80%;
-	  
+		background-color:rgb(83, 75, 78);
 	  }
 	  ul#navigation {
 		display: flex;
