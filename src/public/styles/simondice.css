@@ -26,6 +26,45 @@ body > section.prin
 		margin: auto;
 	}
 
+	ul {
+		list-style-type: none;
+	  }
+	  ul li {
+		position: relative;
+		margin: 0.25em;
+		text-align: center;
+	  
+	  }
+	  ul li a {
+		display: block;
+		padding: 0.55em 1em;
+		text-decoration: none;
+		color: #d9d9d9;
+		border-radius: 0.35em;
+		background-color: rgba(33, 37, 41, 0.25);
+		transition: all 200ms ease;
+		
+	  }
+	  ul li a:hover {
+		color: #ffffff;
+		background-color: rgba(33, 37, 41, 0.65);
+	  }
+	  ul li a.active {
+		background-color: rgba(33, 37, 41, 0.45);
+	  }
+	  ul li ul li a {
+		background-color: black;
+		opacity: 80%;
+	  
+	  }
+	  ul#navigation {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		position: relative;
+	  }
+
 article#bot1
 	{
 		width: 150px; 
