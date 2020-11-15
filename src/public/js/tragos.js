@@ -67,6 +67,7 @@ const app = new Vue({
           trago.nombre.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase())
       },
 
+
       obtenerTragos(){
         fetch('/api/tragos')
           .then(res => res.json())
@@ -88,6 +89,9 @@ const app = new Vue({
         this.noselecciono=true
         this.tragoseleccionado=null
       }
+
+      
+      
     
   }
 
