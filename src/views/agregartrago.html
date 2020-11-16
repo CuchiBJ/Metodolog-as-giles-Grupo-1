@@ -27,7 +27,7 @@
                     <div class="col-md-4 offset-md-4">
                         <div class="card bg-dark">
                             <div class="card-body">
-                                <form v-if="isAdmin()" action="/agregartrago" method="POST" enctype="multipart/form-data" >
+                                <form v-if="cAdmin" action="/agregartrago" method="POST" enctype="multipart/form-data" >
                                     <div class="form-group">
                                         <input type="text" name="nombre" placeholder="Nombre del Trago" class="form-control my-3" required>
                                         <input type="text" name="ingredientes" placeholder="Ingredientes" class="form-control my-3" required>

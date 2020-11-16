@@ -63,7 +63,10 @@ router.get('/agregartrago', (req, res) => {
 });
 
 router.post('/agregartrago', async (req, res) => {
-    const trago = new TragoP();
+    const extension = (req.file.filename.substring(req.file.filename.lastIndexOf("."))).toLowerCase();
+    console.log(extension);
+    if(extension===".png"|| extension === ".jpg" || extension === ".jpeg"){
+    const trago = new Trago();
     trago.nombre = req.body.nombre;
     trago.ingredientes = req.body.ingredientes;
     trago.preparacion = req.body.preparacion;
@@ -72,6 +75,9 @@ router.post('/agregartrago', async (req, res) => {
     trago.path = 'img/uploads/' + req.file.filename;
     await trago.save();
     res.redirect('/tragos');
+    } else {
+        res.redirect('/agregartrago');
+    }
 });
 
 router.post('/agregartragoP', async (req, res) => {
@@ -80,7 +86,7 @@ router.post('/agregartragoP', async (req, res) => {
     trago.ingredientes = req.body.ingredientes;
     trago.preparacion = req.body.preparacion;
     trago.graduacion = req.body.graduacion;
-
+    trago.path = req.body.path;
     await trago.save();
     await TragoP.findByIdAndDelete(req.body.id);
 
@@ -88,6 +94,9 @@ router.post('/agregartragoP', async (req, res) => {
 });
 
 router.post('/agregartragoacarta', async (req, res) => {
+    const extension = (req.file.filename.substring(req.file.filename.lastIndexOf("."))).toLowerCase();
+    console.log(extension);
+    if(extension===".png"|| extension === ".jpg" || extension === ".pjeg"){
     const trago = new TragoP();
     trago.nombre = req.body.nombre;
     trago.ingredientes = req.body.ingredientes;
@@ -99,6 +108,9 @@ router.post('/agregartragoacarta', async (req, res) => {
     await trago.save();
 
     res.redirect('/tragos');
+    } else {
+        res.redirect('/agregartrago');
+    }
 });
 
 router.get('/api/tragos' , async (req, res) => {

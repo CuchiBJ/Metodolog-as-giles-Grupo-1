@@ -137,6 +137,7 @@ const app = new Vue({
         fd.append('ingredientes', trago.ingredientes);
         fd.append('preparacion', trago.preparacion);
         fd.append('graduacion', trago.graduacion);
+        fd.append('path', trago.path)
         apiClient.post("/agregartragoP", fd)
         location.reload();
       },
