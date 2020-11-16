@@ -80,7 +80,7 @@ router.post('/agregartragoP', async (req, res) => {
     trago.ingredientes = req.body.ingredientes;
     trago.preparacion = req.body.preparacion;
     trago.graduacion = req.body.graduacion;
-
+    trago.path = req.body.path;
     await trago.save();
     await TragoP.findByIdAndDelete(req.body.id);
 
