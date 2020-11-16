@@ -1,5 +1,5 @@
 const apiClient = axios.create({
-    baseUrl = `http://localhost:3000`,
+    baseUrl = '',
     withCredentials: false, // This is the default
   });
   const app = new Vue({
