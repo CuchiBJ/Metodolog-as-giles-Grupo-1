@@ -66,7 +66,7 @@ router.post('/agregartrago', async (req, res) => {
     const extension = (req.file.filename.substring(req.file.filename.lastIndexOf("."))).toLowerCase();
     console.log(extension);
     if(extension===".png"|| extension === ".jpg" || extension === ".jpeg"){
-    const trago = new TragoP();
+    const trago = new Trago();
     trago.nombre = req.body.nombre;
     trago.ingredientes = req.body.ingredientes;
     trago.preparacion = req.body.preparacion;
