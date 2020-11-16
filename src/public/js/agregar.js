@@ -1,5 +1,5 @@
 const apiClient = axios.create({
-    baseUrl = process.env.baseURL || "http://localhost:3000",
+    baseUrl = "https://ni-en-pedo-app.herokuapp.com/" || "http://localhost:3000",
     withCredentials: false, // This is the default
   });
   const app = new Vue({
