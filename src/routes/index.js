@@ -63,7 +63,7 @@ router.get('/agregartrago', (req, res) => {
 });
 
 router.post('/agregartrago', async (req, res) => {
-    const trago = new TragoP();
+    const trago = new Trago();
     trago.nombre = req.body.nombre;
     trago.ingredientes = req.body.ingredientes;
     trago.preparacion = req.body.preparacion;

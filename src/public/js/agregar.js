@@ -5,9 +5,11 @@ const apiClient = axios.create({
   const app = new Vue({
     el: '#app5',
     data: {
-      rol:null,
+      rol:null,    
+      cAdmin:null,
+
     },
-  
+
     async created() {
       await this.getRol();
     },
@@ -18,7 +20,7 @@ const apiClient = axios.create({
             .get("getUser", {headers: {"Authorization": "Bearer "+localStorage.token}})
             .then(response =>{
               this.rol=response.data.role
-              
+              this.cAdmin = response.data.role
             })
             .catch(error => console.log(error))
             console.log(this.rol)
