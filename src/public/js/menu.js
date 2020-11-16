@@ -1,5 +1,5 @@
 const apiClient2 = axios.create({
-    baseURL: '',
+    baseURL: `http://localhost:3000`,
     withCredentials: false, // This is the default
   });
 const menu = new Vue({
