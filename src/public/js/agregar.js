@@ -27,6 +27,15 @@ const apiClient = axios.create({
         isAdmin(){
         console.log("entro")
           return this.role=="admin" ? true : false
+        },
+        fileValidation(){
+          const fileInput = document.getElementById('inputGroupFile02');
+          const extension = (fileInput.substring(fileInput.lastIndexOf("."))).toLowerCase();
+          if(extension===".png"|| extension === ".jpg" || extension === ".jpeg"){
+              swal('El tipo de archivo debe ser .jpg, .jpeg o .png');
+              fileInput.value = '';
+              return false;
+          }
         }
     }
   
