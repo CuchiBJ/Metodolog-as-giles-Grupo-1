@@ -69,6 +69,19 @@ ul#navigation {
 
 }
 
+#app8{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  top: 20%;
+  text-align: center;
+  width: 100%;
+
+}
+
+
 #centr{
   display: flex;
   position: absolute;

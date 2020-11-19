@@ -18,10 +18,10 @@ const app8 = new Vue({
 
         visibilidad(){
 
-            var estado = document.getElementById("mostrar").style.visibility
-            if( estado == 'hidden'){
-                document.getElementById("mostrar").style.visibility= 'visible';
-                document.getElementById("mostrar2").style.visibility= 'hidden';
+            var estado = document.getElementById("mostrar").style.display
+            if( estado == 'none'){
+                document.getElementById("mostrar").style.display= 'block';
+                document.getElementById("mostrar2").style.display= 'none';
                 this.actualizartiempo();
              
             } else {
@@ -33,8 +33,8 @@ const app8 = new Vue({
 
 
             document.getElementById("countdown").innerHTML = this.segundoInicio;
-            var estados = document.getElementById("mostrar").style.visibility
-               if (this.segundoInicio == 0 && estados == 'visible'){
+            var estados = document.getElementById("mostrar").style.display
+               if (this.segundoInicio == 0 && estados == 'block'){
                 
                     swal('Perdiste!!! A tomar ')
                 
@@ -51,8 +51,8 @@ const app8 = new Vue({
         ,
         detenerreloj(){
 
-            document.getElementById("mostrar").style.visibility= 'hidden';
-            document.getElementById("mostrar2").style.visibility= 'visible';
+            document.getElementById("mostrar").style.display= 'none';
+            document.getElementById("mostrar2").style.display='block';
             this.segundoInicio = 0
         }
 
@@ -70,7 +70,7 @@ const app8 = new Vue({
             return this.segundoInicio >= 0 && this.segundoInicio<10;
         },
         deshabilitado2(){
-            return  this.estado === 'hidden' || this.segundoInicio === 10
+            return  this.estado === 'none' || this.segundoInicio === 10
         },
         
     }
