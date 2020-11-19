@@ -31,12 +31,13 @@ const apiClient = axios.create({
           return this.role=="admin" ? true : false
         },
         fileValidation(){
-          const fileInput = document.getElementById('inputGroupFile02');
+          const fileInput = document.forms["form"]["image"].value
           const extension = (fileInput.substring(fileInput.lastIndexOf("."))).toLowerCase();
-          if(extension===".png"|| extension === ".jpg" || extension === ".jpeg"){
-              swal('El tipo de archivo debe ser .jpg, .jpeg o .png');
-              fileInput.value = '';
-              return false;
+          console.log(extension);
+          if((extension===".png")|| (extension === ".jpg") || (extension === ".jpeg")){
+             
+          }else {
+            swal('El tipo de archivo debe ser .jpg, .jpeg o .png');
           }
         }
     }
