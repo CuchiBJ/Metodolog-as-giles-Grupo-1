@@ -1,6 +1,11 @@
+const apiClient = axios.create({
+  baseURL: `http://localhost:3000`,
+  withCredentials: false, // This is the default
+});
 const app = new Vue({
   el: '#app3',
   data: {
+    rol:null,
     trago: {
       nombre: '',
       ingredientes: '',
@@ -8,8 +13,10 @@ const app = new Vue({
       graduacion: '',
       filename: '',
       path: ''
-    }, 
-    tragos: [], //[ 
+    },
+    cAdmin:null,
+    tragosP: null,
+    tragos: null, //[ 
       //{name:'Margarita', ing: 'Tequila, triple seco y jugo de lima'},
       //{name:'Mojito', ing: 'Ron, azucar, menta, lima, agua con gas  y hielo '},
       //{name:'Gintonic', ing: 'Ginebra y tónica'},
@@ -50,22 +57,91 @@ const app = new Vue({
    //],
 
    tragoseleccionado: null,
-   filterField: ''
-  ,
+   tragoeditar:null,
+   filterField: '',
    selecciono:false,
    noselecciono:true,
   },
 
-  created() {
+  async created() {
+    await this.getRol();
     this.obtenerTragos();
+    this.gettrago();
+    this.obtenerTragosProp();
   },
 
+  
+
   methods:{
+      async getRol(){
+        await apiClient
+          .get("getUser", {headers: {"Authorization": "Bearer "+localStorage.token}})
+          .then(response =>{
+            this.rol=response.data.role  
+            response.data.role == "admin" ? this.cAdmin = true : this.cAdmin = false         
+          })
+          .catch(error => console.log(error))
+          console.log(this.rol)
+      },
+
+      gettrago() {
+        this.trago=this.$route;
+        console.log(this.trago);
+      },
+
       filter(trago){
           console.log(trago.ingredientes+" "+this.filterField)
           return trago.ingredientes.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase()) ||
           trago.nombre.toLocaleLowerCase().includes(this.filterField.toLocaleLowerCase())
       },
+
+    
+      deletetrago(item) {
+        const index = this.tragos.indexOf(item);
+        confirm("Quieres eliminar este Trago?") &&
+        apiClient.delete("/deletetrago/"+item._id).then(() => {
+          this.tragos.splice(index, 1);
+        });
+      },
+
+      rechazartrago(item) {
+        const index = this.tragos.indexOf(item);
+        confirm("Quieres rechazar este Trago?") &&
+        apiClient.delete("/deletetragoP/"+item._id).then(() => {
+          this.tragosP.splice(index, 1);
+          location.reload();
+        });
+      },
+      
+      editartrago(trago) {
+        this.tragoeditar=trago
+        console.log(this.tragoeditar)
+      },
+
+      cargartrago() {
+        const fd = new FormData();
+        fd.append('id', this.tragoeditar._id);
+        fd.append('nombre', this.tragoeditar.nombre);
+        fd.append('ingredientes', this.tragoeditar.ingredientes);
+        fd.append('graduacion', this.tragoeditar.graduacion);
+          return apiClient.put("/editartrago", fd).then(()=>{
+            Object.assign(this.tragos[this.tragos.indexOf(this.tragoeditar)], this.tragoeditar);
+            this.tragoeditar=null
+          })
+      },
+
+      aceptartrago(trago) {
+        const fd = new FormData();
+        fd.append('id', trago._id);
+        fd.append('nombre', trago.nombre);
+        fd.append('ingredientes', trago.ingredientes);
+        fd.append('preparacion', trago.preparacion);
+        fd.append('graduacion', trago.graduacion);
+        fd.append('path', trago.path)
+        apiClient.post("/agregartragoP", fd)
+        location.reload();
+      },
+
 
       obtenerTragos(){
         fetch('/api/tragos')
@@ -75,6 +151,12 @@ const app = new Vue({
             console.log(this.tragos);
           })
           .catch(err=>console.log(err))
+      },
+
+      obtenerTragosProp() {
+        apiClient
+          .get("/obtenerPropuestos", {headers: {"Authorization": "Bearer "+localStorage.token}})
+          .then((response) => (this.tragosP = response.data));
       },
 
       seleccionartrago(trago){
@@ -87,8 +169,15 @@ const app = new Vue({
         this.selecciono=false
         this.noselecciono=true
         this.tragoseleccionado=null
-      }
+      },
     
+      isAdmin(){
+        return this.role=="admin" ? true : false
+      },
+
+      nohaytragos(){
+        return this.tragosP.length == 0 ? true : false
+      }
   }
 
   
